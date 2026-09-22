@@ -219,3 +219,13 @@ footer small{color:#a1aab8;grid-column:1/-1;font-size:10px}
 .checker-result-item strong{color:var(--ink);font-size:13px;line-height:1.35;font-weight:650}
 .checker-result-all{color:var(--blue);margin-top:10px;font-size:12px;font-weight:700;text-decoration:none;display:inline-block}
 .checker-result-all:hover{text-decoration:underline}
+
+.anchor-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+.anchor-table th,.anchor-table td{text-align:left;border-bottom:1px solid #e9edf3;padding:10px 8px;vertical-align:top}
+.anchor-table th{color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-size:10px;font-weight:750}
+.anchor-table td a{color:var(--blue);font-weight:600;text-decoration:none}
+.anchor-table td a:hover{text-decoration:underline}
+.source-badge{border-radius:999px;padding:3px 9px;font-size:10px;font-weight:750;display:inline-block}
+.source-badge-ok{color:#0a7a53;background:#e3f8ef}
+.source-badge-warn{color:#a45c05;background:#fff2e0}
+.tool-disclaimer{color:#8a5a00;background:#fff6e5;border:1px solid #f3dfa8;border-radius:14px;margin-top:14px;padding:14px 16px;font-size:12.5px;line-height:1.6;font-weight:600}

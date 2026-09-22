@@ -67,7 +67,7 @@ function renderHead(opts) {
 // ---------------------------------------------------------------------
 
 function headerHome() {
-  return `<header class="nav-wrap"><nav class="nav" aria-label="Navigazione principale"><a class="brand" href="/#top" aria-label="Will It Work, home"><span class="brand-mark"><img src="/will-it-work-logo.png" alt=""/></span><span>Will It Work?</span></a><div class="nav-links"><a href="/#come-funziona">Come funziona</a><a href="/compatibilita">Tutte le verifiche</a><a href="/#categorie">Categorie</a></div><a class="nav-cta" href="/#checker">Prova ora</a></nav></header>`;
+  return `<header class="nav-wrap"><nav class="nav" aria-label="Navigazione principale"><a class="brand" href="/#top" aria-label="Will It Work, home"><span class="brand-mark"><img src="/will-it-work-logo.png" alt=""/></span><span>Will It Work?</span></a><div class="nav-links"><a href="/#come-funziona">Come funziona</a><a href="/compatibilita">Tutte le verifiche</a><a href="/#categorie">Categorie</a><a href="/calcolatori/vite-tassello">Calcolatore tasselli</a></div><a class="nav-cta" href="/#checker">Prova ora</a></nav></header>`;
 }
 
 function headerGuideNav(linkHref, linkText) {
@@ -324,10 +324,75 @@ function renderAffiliazionePage() {
   });
 }
 
+// ---------------------------------------------------------------------
+// Wall-anchor calculator (/calcolatori/vite-tassello)
+// ---------------------------------------------------------------------
+
+function renderSourceLinks(sources) {
+  return sources
+    .map((s) => `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.label)} ↗</a>`)
+    .join(', ');
+}
+
+function renderAnchorTableRow(row) {
+  const badge =
+    row.sources.length >= 2
+      ? `<span class="source-badge source-badge-ok">✓ ${row.sources.length} fonti indipendenti</span>`
+      : `<span class="source-badge source-badge-warn">⚠ fonte singola — verifica sulla confezione</span>`;
+  const screwRange = `${row.screwMin} – ${row.screwMax} mm`;
+  return `<tr><td>${row.plugDiameter} mm</td><td>${row.holeDiameter} mm</td><td>${screwRange}</td><td>${badge}<br/><small>${renderSourceLinks(row.sources)}</small></td></tr>`;
+}
+
+function renderWallAnchorCalculatorPage(rules) {
+  const head = renderHead({
+    title: 'Calcolatore vite-tassello: che diametro serve? — Will It Work?',
+    description: 'Scopri il diametro del foro e la vite giusta per il tuo tassello, per muro pieno o cartongesso, con le fonti tecniche verificate.',
+    ogTitle: 'Calcolatore vite-tassello: che diametro serve?',
+    ogDescription: 'Scopri il diametro del foro e la vite giusta per il tuo tassello, per muro pieno o cartongesso, con le fonti tecniche verificate.',
+    ogType: 'article',
+    twitterTitle: 'Calcolatore vite-tassello: che diametro serve?',
+    twitterDescription: 'Scopri il diametro del foro e la vite giusta per il tuo tassello, per muro pieno o cartongesso, con le fonti tecniche verificate.',
+    iconHref: '/will-it-work-logo.png',
+    canonical: 'https://willitwork.it/calcolatori/vite-tassello',
+    includeWebsiteLdJson: false,
+  });
+
+  const diameterButtons = rules.solidWall.rows
+    .map((r, i) => `<button type="button" data-diameter="${r.plugDiameter}" class="${i === 0 ? 'active' : ''}">${r.plugDiameter} mm</button>`)
+    .join('');
+
+  const tableRows = rules.solidWall.rows.map(renderAnchorTableRow).join('');
+
+  const selfDrilling = rules.hollowWall.selfDrilling;
+  const toggleType = rules.hollowWall.toggleType;
+
+  const body = `<main class="guide-page">${headerGuideNav(
+    '/#checker',
+    'Verifica un prodotto'
+  )}<article class="guide-article"><nav aria-label="Percorso"><a href="/">Home</a><span>›</span><span>Calcolatori</span></nav><div class="guide-kicker">CALCOLATORE</div><h1>Che tassello e vite servono?</h1><p class="guide-lead">Seleziona il tipo di muro per scoprire il foro e la vite giusti, con le fonti tecniche verificate.</p><div class="checker-shell" id="calcolatore"><form id="wall-anchor-form"><div class="checker-title"><span class="live-dot"></span><div><strong>Calcola tassello e vite</strong><small>Dati da schede tecniche ufficiali dei produttori</small></div></div><label>Tipo di muro</label><div class="catalog-filters" role="radiogroup" aria-label="Tipo di muro" id="wall-type-toggle"><button type="button" data-wall="solid" class="active">Muro pieno / mattone / cemento</button><button type="button" data-wall="hollow">Cartongesso / muro cavo</button></div><div id="solid-wall-fields"><label>Diametro tassello</label><div class="catalog-filters" id="plug-diameter-buttons">${diameterButtons}</div></div><div id="hollow-wall-fields" hidden><label for="panel-thickness">Spessore lastra (mm)</label><div class="input-wrap"><input id="panel-thickness" type="number" step="0.5" min="0" placeholder="Es. 12,5"/></div><label>Tipo di tassello</label><div class="catalog-filters" id="hollow-type-toggle"><button type="button" data-hollow="selfdrilling" class="active">Autoforante</button><button type="button" data-hollow="toggle">A espansione/ancora (farfalla, molly)</button></div></div></form><div class="tool-disclaimer">⚠ ${escapeHtml(
+    rules.disclaimer
+  )}</div><div id="tool-result" class="checker-result" hidden aria-live="polite"></div></div><section class="guide-copy"><h2>Tabella completa — muro pieno o semipieno</h2><p>${escapeHtml(
+    rules.solidWall.rule
+  )}</p><table class="anchor-table"><thead><tr><th>Ø tassello</th><th>Ø foro</th><th>Ø vite</th><th>Fonti</th></tr></thead><tbody>${tableRows}</tbody></table><h2>Cartongesso o muro cavo</h2><p><strong>${escapeHtml(
+    selfDrilling.plugType
+  )}</strong>: ${escapeHtml(selfDrilling.rule)} Vite ${selfDrilling.screwMin}–${selfDrilling.screwMax} mm, lastre da ${
+    selfDrilling.minPanelThickness
+  } fino a ${selfDrilling.maxPanelThicknessNoPreDrill} mm circa senza preforo. Fonte: ${renderSourceLinks(
+    selfDrilling.sources
+  )}</p><p><strong>${escapeHtml(toggleType.plugType)}</strong>: ${escapeHtml(toggleType.note)} Fonte: ${renderSourceLinks(
+    toggleType.sources
+  )}</p><p class="guide-source">Nota sui materiali teneri: ${escapeHtml(rules.softMaterialNote)}</p></section></article>${footerCatalog()}</main><script type="application/json" id="wall-anchor-rules">${JSON.stringify(
+    rules
+  )}</script><script src="/assets/wall-anchor-calculator.js" defer></script>`;
+
+  return `<!DOCTYPE html><html lang="it"><head>${head}</head><body>${body}</body></html>`;
+}
+
 module.exports = {
   renderHomePage,
   renderCatalogPage,
   renderGuidePage,
   renderPrivacyPage,
   renderAffiliazionePage,
+  renderWallAnchorCalculatorPage,
 };

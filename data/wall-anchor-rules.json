@@ -1,0 +1,83 @@
+{
+  "_comment": "Regole per il calcolatore vite-tassello. Modulo 'a regole' separato da compatibility-dataset.json: qui non verifichiamo combinazioni specifiche di prodotto, applichiamo formule tecniche generiche corroborate da schede tecniche ufficiali di produttori. Ogni riga elenca le fonti usate per verificarla.",
+  "solidWall": {
+    "label": "Muro pieno o semipieno (mattone, cemento, calcestruzzo)",
+    "plugType": "Tassello ad espansione in nylon (tipo universale)",
+    "rule": "Il foro ha lo stesso diametro del tassello; la vite ha un diametro inferiore, nel range indicato.",
+    "rows": [
+      {
+        "plugDiameter": 5,
+        "screwMin": 3,
+        "screwMax": 4,
+        "holeDiameter": 5,
+        "sources": [
+          { "label": "Fischer — Tassello in nylon SX, scheda tecnica ufficiale", "url": "https://www.utensileriaonline.it/media/FISCHER%20scheda%20tecnica%20tasselli%20SX.pdf" },
+          { "label": "Würth — Tassello universale in nylon Shark Pro, scheda tecnica", "url": "https://fs.wuerth.it/media/downloads/pdf/certificazioni_tuv/eta/Tassello_universale_in_nylon_shark_pro.pdf" }
+        ]
+      },
+      {
+        "plugDiameter": 6,
+        "screwMin": 4,
+        "screwMax": 5,
+        "holeDiameter": 6,
+        "sources": [
+          { "label": "Fischer — Tassello in nylon SX, scheda tecnica ufficiale", "url": "https://www.utensileriaonline.it/media/FISCHER%20scheda%20tecnica%20tasselli%20SX.pdf" },
+          { "label": "Würth — Tassello universale in nylon Shark Pro, scheda tecnica", "url": "https://fs.wuerth.it/media/downloads/pdf/certificazioni_tuv/eta/Tassello_universale_in_nylon_shark_pro.pdf" }
+        ]
+      },
+      {
+        "plugDiameter": 8,
+        "screwMin": 4.5,
+        "screwMax": 6,
+        "holeDiameter": 8,
+        "sources": [
+          { "label": "Fischer — Tassello in nylon SX, scheda tecnica ufficiale", "url": "https://www.utensileriaonline.it/media/FISCHER%20scheda%20tecnica%20tasselli%20SX.pdf" },
+          { "label": "Würth — Tassello universale in nylon Shark Pro, scheda tecnica", "url": "https://fs.wuerth.it/media/downloads/pdf/certificazioni_tuv/eta/Tassello_universale_in_nylon_shark_pro.pdf" }
+        ]
+      },
+      {
+        "plugDiameter": 10,
+        "screwMin": 6,
+        "screwMax": 8,
+        "holeDiameter": 10,
+        "sources": [
+          { "label": "Fischer — Tassello in nylon SX, scheda tecnica ufficiale", "url": "https://www.utensileriaonline.it/media/FISCHER%20scheda%20tecnica%20tasselli%20SX.pdf" },
+          { "label": "Würth — Tassello universale in nylon Shark Pro, scheda tecnica", "url": "https://fs.wuerth.it/media/downloads/pdf/certificazioni_tuv/eta/Tassello_universale_in_nylon_shark_pro.pdf" }
+        ]
+      },
+      {
+        "plugDiameter": 12,
+        "screwMin": 8,
+        "screwMax": 10,
+        "holeDiameter": 12,
+        "sources": [
+          { "label": "Fischer — Tassello in nylon SX, scheda tecnica ufficiale", "url": "https://www.utensileriaonline.it/media/FISCHER%20scheda%20tecnica%20tasselli%20SX.pdf" },
+          { "label": "Würth — Tassello universale in nylon Shark Pro, scheda tecnica", "url": "https://fs.wuerth.it/media/downloads/pdf/certificazioni_tuv/eta/Tassello_universale_in_nylon_shark_pro.pdf" }
+        ]
+      }
+    ]
+  },
+  "hollowWall": {
+    "label": "Cartongesso o muro cavo",
+    "selfDrilling": {
+      "plugType": "Tassello autoforante per cartongesso (es. Fischer GK)",
+      "rule": "Nessun foro da praticare: il tassello si avvita direttamente nella lastra fino allo spessore massimo indicato.",
+      "screwMin": 4,
+      "screwMax": 5,
+      "minPanelThickness": 9.5,
+      "maxPanelThicknessNoPreDrill": 15,
+      "sources": [
+        { "label": "Fischer — Fissaggio per cartongesso GK, dati tecnici prodotto", "url": "https://www.fischer.it/it-it/prodotti/fissaggi-cartongesso-e-soffitti/fissaggio-per-cartongesso-gk/52389-gk" }
+      ]
+    },
+    "toggleType": {
+      "plugType": "Tassello a espansione/ancora dietro la lastra (es. Fischer DuoTec, tasselli a farfalla o molly)",
+      "note": "Per questi sistemi il foro richiesto NON dipende dalla vite ma dal diametro del sistema stesso (es. DuoTec 10 → foro 10 mm, DuoTec 12 → foro 12 mm). Non abbiamo trovato una scheda tecnica completa e verificabile con i dati numerici per tutta la gamma: mostriamo questa informazione come indicazione qualitativa, non come dato calcolato.",
+      "sources": [
+        { "label": "Fischer — Tassello ad ancora per cartongesso DuoTec (pagina prodotto)", "url": "https://www.fischer.it/it-it/prodotti/in-primo-piano/duoline/duotec" }
+      ]
+    }
+  },
+  "softMaterialNote": "Per materiali più teneri, alcuni produttori consigliano un foro leggermente più stretto: verifica sempre le istruzioni sulla confezione.",
+  "disclaimer": "Questi dati sono indicazioni generali tratte da schede tecniche di produttori terzi, non specifiche del prodotto che hai in mano. Verifica sempre le indicazioni riportate sulla confezione del tassello che usi. Per fissaggi strutturali o carichi pesanti (mobili pensili, TV, mensole cariche), rivolgiti a un professionista."
+}
