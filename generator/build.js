@@ -14,8 +14,9 @@ const {
 const ROOT = path.resolve(__dirname, '..');
 const DATA_DIR = path.join(ROOT, 'data');
 const OUT_DIR = path.join(ROOT, 'dist');
-const ASSETS_SRC = path.join(ROOT, 'willitwork.it', 'assets');
-const LOGO_SRC = path.join(ROOT, 'willitwork.it', 'will-it-work-logo.png');
+const STATIC_SRC = path.join(__dirname, 'static');
+const ASSETS_SRC = STATIC_SRC;
+const LOGO_SRC = path.join(STATIC_SRC, 'will-it-work-logo.png');
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
