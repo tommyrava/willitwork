@@ -1,0 +1,52 @@
+{
+  "_comment": "Per-entry overrides for the 'Cerca questo prodotto' affiliate-offer block. Not present anywhere in the client JS bundle (server-side-only data, like relatedSlugs/details); extracted verbatim from the already-downloaded, already-indexed HTML pages in willitwork.it/compatibilita/. All other entries use the deterministic default: h2 = 'Cerca l'alternativa compatibile' when verdict is 'no', else 'Cerca questo prodotto'; p = 'Controlla modello, codice e specifiche anche nella scheda del venditore.'; cta = 'Cerca su Amazon ↗'; Amazon query = '{device} {product}'.",
+  "airpods-telefono-android": {
+    "h2": "Cerchi AirPods da usare con Android?",
+    "p": "Il collegamento Bluetooth funziona; confronta modello e funzioni disponibili prima dell’acquisto.",
+    "ctaLabel": "Vedi AirPods su Amazon ↗",
+    "searchQuery": "Apple AirPods"
+  },
+  "airtag-telefono-android": {
+    "h2": "Cerca un localizzatore pensato per Android",
+    "p": "Verifica nella scheda del prodotto quali telefoni e quale rete di localizzazione sono supportati.",
+    "ctaLabel": "Vedi alternative per Android su Amazon ↗",
+    "searchQuery": "localizzatore Bluetooth compatibile Android"
+  },
+  "cuffie-bluetooth-ps5": {
+    "h2": "Cerca un adattatore dichiarato compatibile con PS5",
+    "p": "Controlla che supporti audio e microfono con PS5 e con il modello delle tue cuffie.",
+    "ctaLabel": "Vedi adattatori per PS5 su Amazon ↗",
+    "searchQuery": "adattatore cuffie Bluetooth compatibile PS5 USB"
+  },
+  "epson-xp-2200-cartuccia-603": {
+    "h2": "Trova le cartucce corrette: Epson 604 o 604XL",
+    "p": "Per XP-2200 verifica il codice 604 o 604XL, poi scegli colore e capacità necessari.",
+    "ctaLabel": "Cerca Epson 604/604XL su Amazon ↗",
+    "searchQuery": "Epson 604 604XL XP-2200"
+  },
+  "epson-xp-2200-cartuccia-604": {
+    "h2": "Cerca Epson 604 o 604XL per XP-2200",
+    "p": "Controlla codice, colore e capacità prima di scegliere la confezione.",
+    "ctaLabel": "Cerca Epson 604/604XL su Amazon ↗",
+    "searchQuery": "Epson 604 604XL XP-2200"
+  },
+  "hp-deskjet-2720e-cartuccia-hp-305": {
+    "h2": "Cerca HP 305 o 305XL per DeskJet 2720e",
+    "p": "Scegli tra nero e tricromia; le versioni XL sono compatibili e contengono più inchiostro.",
+    "ctaLabel": "Cerca HP 305/305XL su Amazon ↗",
+    "searchQuery": "HP 305 305XL DeskJet 2720e nero tricromia"
+  },
+  "airtag-batteria-cr2025": { "searchQuery": "batteria CR2032 compatibile AirTag" },
+  "canon-ts3450-cartucce-hp305": { "searchQuery": "Canon PG-545 CL-546 PIXMA TS3450" },
+  "disco-ps4-ps5-digital-edition": { "searchQuery": "gioco PS4 digitale compatibile PS5" },
+  "dualshock-4-giochi-ps5": { "searchQuery": "controller DualSense PS5" },
+  "hp-deskjet-2720e-cartuccia-hp304": { "searchQuery": "HP 305 305XL DeskJet 2720e" },
+  "ipad-10-apple-pencil-prima-generazione": { "h2": "Cerca l’adattatore necessario", "searchQuery": "adattatore USB-C Apple Pencil 1 iPad 10 generazione" },
+  "ipad-10-apple-pencil-seconda-generazione": { "searchQuery": "Apple Pencil USB-C iPad 10 generazione" },
+  "ipad-10-cavo-lightning": { "searchQuery": "cavo USB-C USB-C iPad 10 generazione 20W" },
+  "iphone-12-cavo-usb-c-usb-c": { "searchQuery": "cavo USB-C Lightning iPhone 12 certificato MFi" },
+  "iphone-14-cavo-usb-c-usb-c": { "searchQuery": "cavo USB-C Lightning iPhone 14 certificato MFi" },
+  "iphone-15-cavo-lightning": { "searchQuery": "cavo USB-C USB-C iPhone 15" },
+  "samsung-galaxy-a15-microsd-2tb": { "searchQuery": "microSD 1TB Samsung Galaxy A15" },
+  "ssd-m2-sata-ps5": { "searchQuery": "SSD M.2 NVMe PS5 con dissipatore 5500 MB s" }
+}

@@ -1,0 +1,815 @@
+[
+  {
+    "slug": "iphone-12-cavo-usb-c-lightning",
+    "device": "iPhone 12",
+    "product": "Cavo USB-C to Lightning",
+    "title": "iPhone 12 e cavo USB-C–Lightning: sono compatibili?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, è compatibile",
+    "summary": "Il connettore Lightning entra nell’iPhone 12; il lato USB-C va collegato a un alimentatore o computer con porta USB-C.",
+    "explanation": "iPhone 12 usa una porta Lightning. Un cavo USB-C–Lightning ha Lightning sul lato del telefono e USB-C sul lato dell’alimentatore: è quindi la combinazione corretta, anche per la ricarica rapida con un alimentatore adeguato.",
+    "checks": [
+      "Lightning sul lato iPhone",
+      "USB-C sul lato alimentatore",
+      "Cavo certificato e potenza adeguata"
+    ]
+  },
+  {
+    "slug": "iphone-12-cavo-usb-c-usb-c",
+    "device": "iPhone 12",
+    "product": "Cavo USB-C to USB-C",
+    "title": "Un cavo USB-C–USB-C funziona con iPhone 12?",
+    "verdict": "no",
+    "verdictLabel": "No, non entra nell’iPhone",
+    "summary": "iPhone 12 ha una porta Lightning, non USB-C. Serve un cavo USB-C–Lightning.",
+    "explanation": "Entrambe le estremità di un cavo USB-C–USB-C sono incompatibili con la porta Lightning di iPhone 12. Non basta che l’alimentatore abbia USB-C: sul lato del telefono deve esserci Lightning.",
+    "checks": [
+      "Porta iPhone: Lightning",
+      "Cavo proposto: USB-C–USB-C",
+      "Alternativa: USB-C–Lightning"
+    ]
+  },
+  {
+    "slug": "iphone-15-cavo-lightning",
+    "device": "iPhone 15",
+    "product": "Cavo Lightning",
+    "title": "iPhone 15 è compatibile con un cavo Lightning?",
+    "verdict": "no",
+    "verdictLabel": "No, iPhone 15 usa USB-C",
+    "summary": "Il connettore Lightning non entra in iPhone 15. Serve un cavo con USB-C sul lato del telefono.",
+    "explanation": "La serie iPhone 15 ha sostituito la porta Lightning con USB-C. Puoi usare un cavo USB-C–USB-C oppure USB-A–USB-C, in base alla porta disponibile sull’alimentatore.",
+    "checks": [
+      "Porta iPhone 15: USB-C",
+      "Lightning: incompatibile",
+      "Controlla anche il lato alimentatore"
+    ],
+    "source": {
+      "label": "Specifiche tecniche Apple di iPhone 15",
+      "url": "https://support.apple.com/en-us/111831"
+    }
+  },
+  {
+    "slug": "macbook-air-m1-caricatore-usb-c-65w",
+    "device": "MacBook Air M1 2020",
+    "product": "Caricatore USB-C Power Delivery 65 W",
+    "title": "Un caricatore USB-C da 65 W funziona con MacBook Air M1?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, con Power Delivery",
+    "summary": "MacBook Air M1 può usare un alimentatore USB-C PD da 65 W e assorbe soltanto la potenza necessaria.",
+    "explanation": "Il modello M1 del 2020 viene fornito con un alimentatore USB-C da 30 W, ma può essere collegato a un alimentatore USB-C Power Delivery più potente. Il requisito importante è il supporto USB-C PD e un cavo adatto.",
+    "checks": [
+      "Porta USB-C",
+      "Protocollo Power Delivery",
+      "Cavo compatibile con la potenza"
+    ],
+    "source": {
+      "label": "Specifiche Apple MacBook Air M1 2020",
+      "url": "https://support.apple.com/en-us/111883"
+    }
+  },
+  {
+    "slug": "hp-deskjet-2720e-cartuccia-hp-305",
+    "device": "HP DeskJet 2720e",
+    "product": "Cartuccia HP 305 o 305XL",
+    "title": "HP DeskJet 2720e usa cartucce HP 305?",
+    "seoTitle": "HP DeskJet 2720e: cartucce compatibili HP 305 e 305XL",
+    "metaDescription": "HP DeskJet 2720e usa cartucce HP 305 e 305XL, nere o tricromia. Scopri quale versione scegliere e cosa controllare prima dell’acquisto.",
+    "verdict": "yes",
+    "verdictLabel": "Sì, usa HP 305 e 305XL",
+    "summary": "La famiglia HP 305, nera o tricromia, è compatibile con HP DeskJet 2720e.",
+    "explanation": "HP DeskJet 2720e utilizza la famiglia HP 305. Puoi scegliere la capacità standard oppure 305XL: entrambe sono compatibili con la stampante, mentre la versione XL contiene più inchiostro.",
+    "details": [
+      {
+        "title": "HP 305 o 305XL: cosa cambia?",
+        "paragraphs": [
+          "Il codice 305 identifica la famiglia corretta. La sigla XL indica una capacità maggiore, non una forma diversa: HP 305XL entra quindi nella stessa stampante e permette normalmente di stampare più pagine."
+        ]
+      },
+      {
+        "title": "Nera e tricromia non sono intercambiabili",
+        "paragraphs": [
+          "HP 305 nera e HP 305 tricromia occupano alloggiamenti diversi. Controlla quale colore devi sostituire e verifica che “DeskJet 2720e” compaia nell’elenco dei modelli compatibili sulla confezione o nella scheda del prodotto."
+        ]
+      }
+    ],
+    "checks": [
+      "Codice: HP 305 oppure HP 305XL",
+      "Colore: nero oppure tricromia",
+      "Modello indicato: HP DeskJet 2720e"
+    ],
+    "relatedSlugs": [
+      "hp-deskjet-2720e-cartuccia-hp304",
+      "epson-xp-2200-cartuccia-604",
+      "canon-ts3450-cartucce-pg545-cl546"
+    ],
+    "source": {
+      "label": "Assistenza ufficiale HP",
+      "url": "https://support.hp.com/us-en/document/ish_6365625-6365655-16"
+    }
+  },
+  {
+    "slug": "epson-xp-2200-cartuccia-604",
+    "device": "Epson Expression Home XP-2200",
+    "product": "Cartuccia Epson 604 o 604XL",
+    "title": "Epson XP-2200 è compatibile con cartucce 604?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, usa Epson 604",
+    "summary": "Epson XP-2200 utilizza la famiglia di inchiostri 604, disponibile anche in capacità XL.",
+    "explanation": "Le cartucce nero, ciano, magenta e giallo sono separate. Verifica che il codice 604 o 604XL e il modello XP-2200 compaiano nella descrizione o sulla confezione.",
+    "checks": [
+      "Famiglia: Epson 604",
+      "604XL compatibile",
+      "Quattro colori separati"
+    ],
+    "source": {
+      "label": "Scheda ufficiale Epson XP-2200",
+      "url": "https://www.epson.eu/en_EU/products/printers/inkjet/consumer/expression-xp-2200-a4-multifunction-wireless-inkjet-printer-with-6-months-free-ink-with-readyprint-flex-subscription/p/34101"
+    }
+  },
+  {
+    "slug": "airtag-batteria-cr2032",
+    "device": "Apple AirTag",
+    "product": "Batteria CR2032 3 V",
+    "title": "Quale batteria usa AirTag? CR2032 è compatibile?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, serve una CR2032 da 3 V",
+    "summary": "AirTag utilizza una batteria a bottone al litio CR2032 da 3 V sostituibile dall’utente.",
+    "explanation": "Inserisci la batteria con il lato positivo rivolto verso l’alto. Apple segnala che alcuni rivestimenti amari possono interferire con il contatto: controlla che la confezione dichiari la compatibilità con AirTag.",
+    "checks": [
+      "Formato: CR2032",
+      "Tensione: 3 V",
+      "Lato positivo verso l’alto"
+    ],
+    "source": {
+      "label": "Guida ufficiale Apple per AirTag",
+      "url": "https://support.apple.com/it-it/102600"
+    }
+  },
+  {
+    "slug": "iphone-14-cavo-usb-c-lightning",
+    "device": "iPhone 14",
+    "product": "Cavo USB-C–Lightning",
+    "title": "iPhone 14 funziona con un cavo USB-C–Lightning?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, è il cavo corretto",
+    "summary": "iPhone 14 ha una porta Lightning e nella confezione originale Apple includeva proprio un cavo USB-C–Lightning.",
+    "explanation": "Il connettore Lightning va collegato all’iPhone 14, mentre il connettore USB-C entra nell’alimentatore. Con un alimentatore USB-C da 20 W o superiore è supportata anche la ricarica rapida.",
+    "checks": [
+      "Lightning sul lato iPhone",
+      "USB-C sul lato alimentatore",
+      "Alimentatore da 20 W o superiore per la ricarica rapida"
+    ],
+    "source": {
+      "label": "Specifiche tecniche Apple di iPhone 14",
+      "url": "https://support.apple.com/it-it/111850"
+    }
+  },
+  {
+    "slug": "iphone-14-cavo-usb-c-usb-c",
+    "device": "iPhone 14",
+    "product": "Cavo USB-C–USB-C",
+    "title": "Un cavo USB-C–USB-C è compatibile con iPhone 14?",
+    "verdict": "no",
+    "verdictLabel": "No, iPhone 14 usa Lightning",
+    "summary": "Il connettore USB-C non entra nella porta Lightning di iPhone 14.",
+    "explanation": "Un cavo USB-C–USB-C ha lo stesso connettore su entrambe le estremità, ma iPhone 14 usa Lightning. Per un alimentatore USB-C serve un cavo USB-C–Lightning.",
+    "checks": [
+      "Porta iPhone 14: Lightning",
+      "Cavo proposto: USB-C–USB-C",
+      "Alternativa: USB-C–Lightning"
+    ],
+    "source": {
+      "label": "Specifiche tecniche Apple di iPhone 14",
+      "url": "https://support.apple.com/it-it/111850"
+    }
+  },
+  {
+    "slug": "iphone-15-cavo-usb-c-usb-c",
+    "device": "iPhone 15",
+    "product": "Cavo USB-C–USB-C",
+    "title": "Un cavo USB-C–USB-C funziona con iPhone 15?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, è compatibile",
+    "summary": "iPhone 15 usa USB-C: un cavo USB-C–USB-C è adatto se anche l’alimentatore dispone di una porta USB-C.",
+    "explanation": "Il lato USB-C del cavo entra direttamente nell’iPhone 15. L’altra estremità USB-C richiede un alimentatore o una porta del computer dello stesso tipo; velocità e potenza dipendono anche dal caricatore.",
+    "checks": [
+      "Porta iPhone 15: USB-C",
+      "Cavo: USB-C su entrambe le estremità",
+      "Alimentatore con uscita USB-C"
+    ],
+    "source": {
+      "label": "Specifiche tecniche Apple di iPhone 15",
+      "url": "https://support.apple.com/en-us/111831"
+    }
+  },
+  {
+    "slug": "ipad-10-cavo-lightning",
+    "device": "iPad 10ª generazione",
+    "product": "Cavo Lightning",
+    "title": "iPad 10ª generazione è compatibile con un cavo Lightning?",
+    "verdict": "no",
+    "verdictLabel": "No, questo iPad usa USB-C",
+    "summary": "iPad di 10ª generazione ha una porta USB-C e il connettore Lightning non entra.",
+    "explanation": "Apple ha dotato iPad di 10ª generazione di un connettore USB-C. Per ricaricarlo serve un cavo USB-C sul lato del tablet; il cavo Lightning è destinato ad altri modelli Apple.",
+    "checks": [
+      "Porta iPad: USB-C",
+      "Lightning: incompatibile",
+      "Cavo corretto: USB-C"
+    ],
+    "source": {
+      "label": "Specifiche Apple di iPad 10ª generazione",
+      "url": "https://support.apple.com/it-it/111840"
+    }
+  },
+  {
+    "slug": "ipad-10-cavo-usb-c-usb-c",
+    "device": "iPad 10ª generazione",
+    "product": "Cavo USB-C–USB-C",
+    "title": "Un cavo USB-C–USB-C funziona con iPad 10ª generazione?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, è il tipo corretto",
+    "summary": "iPad di 10ª generazione usa USB-C e viene fornito con un cavo di ricarica USB-C.",
+    "explanation": "Il connettore USB-C entra direttamente nell’iPad. Per usare un cavo USB-C–USB-C, anche l’alimentatore deve avere una porta USB-C; Apple abbina al dispositivo un alimentatore da 20 W.",
+    "checks": [
+      "Porta iPad: USB-C",
+      "Cavo: USB-C–USB-C",
+      "Alimentatore USB-C, idealmente almeno 20 W"
+    ],
+    "source": {
+      "label": "Specifiche Apple di iPad 10ª generazione",
+      "url": "https://support.apple.com/it-it/111840"
+    }
+  },
+  {
+    "slug": "macbook-air-m2-caricatore-usb-c-65w",
+    "device": "MacBook Air M2 2022",
+    "product": "Caricatore USB-C Power Delivery 65 W",
+    "title": "Un caricatore USB-C da 65 W funziona con MacBook Air M2?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, con Power Delivery",
+    "summary": "MacBook Air M2 accetta la ricarica tramite USB-C e può usare un alimentatore PD da 65 W.",
+    "explanation": "Il Mac gestisce la potenza negoziandola con l’alimentatore, quindi un caricatore USB-C PD da 65 W è compatibile. Apple indica adattatori da 30 W o 35 W nelle configurazioni standard e 70 W per la ricarica rapida: 65 W resta adatto, ma non va confuso con la soglia ufficiale da 70 W per la ricarica rapida.",
+    "checks": [
+      "USB-C Power Delivery",
+      "Cavo adatto ad almeno 65 W",
+      "65 W compatibile; ricarica rapida Apple indicata con 70 W"
+    ],
+    "source": {
+      "label": "Specifiche Apple MacBook Air M2 2022",
+      "url": "https://support.apple.com/en-us/111867"
+    }
+  },
+  {
+    "slug": "macbook-air-m2-caricatore-usb-c-20w",
+    "device": "MacBook Air M2 2022",
+    "product": "Caricatore USB-C 20 W",
+    "title": "Un caricatore USB-C da 20 W basta per MacBook Air M2?",
+    "verdict": "limited",
+    "verdictLabel": "Si collega, ma è sottodimensionato",
+    "summary": "Un alimentatore USB-C PD da 20 W può fornire energia, ma è molto meno potente dei 30–35 W previsti da Apple.",
+    "explanation": "Con il Mac acceso e sotto carico, 20 W possono ricaricare molto lentamente o non compensare completamente il consumo. È preferibile usare almeno la potenza dell’alimentatore previsto per la propria configurazione.",
+    "checks": [
+      "Deve supportare USB-C Power Delivery",
+      "Potenza proposta: 20 W",
+      "Potenza Apple standard: 30 W o 35 W"
+    ],
+    "source": {
+      "label": "Specifiche Apple MacBook Air M2 2022",
+      "url": "https://support.apple.com/en-us/111867"
+    }
+  },
+  {
+    "slug": "airtag-batteria-cr2025",
+    "device": "Apple AirTag",
+    "product": "Batteria CR2025 3 V",
+    "title": "Una batteria CR2025 funziona in Apple AirTag?",
+    "verdict": "no",
+    "verdictLabel": "No, serve una CR2032",
+    "summary": "CR2025 e CR2032 hanno entrambe 3 V, ma spessore e sigla sono diversi: AirTag richiede CR2032.",
+    "explanation": "La tensione uguale non rende intercambiabili le due batterie. Apple specifica una pila a bottone al litio CR2032 da 3 V, quindi una CR2025 non è la sostituzione corretta.",
+    "checks": [
+      "Formato richiesto: CR2032",
+      "Formato proposto: CR2025",
+      "Tensione uguale, dimensione diversa"
+    ],
+    "source": {
+      "label": "Guida ufficiale Apple per AirTag",
+      "url": "https://support.apple.com/it-it/102600"
+    }
+  },
+  {
+    "slug": "canon-ts3450-cartucce-pg545-cl546",
+    "device": "Canon PIXMA TS3450",
+    "product": "Cartucce Canon PG-545 e CL-546",
+    "title": "Canon PIXMA TS3450 usa PG-545 e CL-546?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, sono compatibili",
+    "summary": "Canon PIXMA TS3450 è compatibile con PG-545 nero e CL-546 colore, anche nelle versioni XL.",
+    "explanation": "PG-545 contiene l’inchiostro nero e CL-546 quello a colori. Le versioni XL sono compatibili e offrono una resa maggiore; controlla quale colore ti serve prima dell’acquisto.",
+    "checks": [
+      "Nero: PG-545 o PG-545XL",
+      "Colore: CL-546 o CL-546XL",
+      "Modello incluso nell’elenco Canon"
+    ],
+    "source": {
+      "label": "Compatibilità ufficiale Canon",
+      "url": "https://www.canon.it/store/canon-confezione-multipla-di-2-inchiostri-canon-pg-545xl-e-cl-546xl-bk-c-m-y-a-resa-elevata/8286B013/"
+    }
+  },
+  {
+    "slug": "canon-ts3450-cartucce-hp305",
+    "device": "Canon PIXMA TS3450",
+    "product": "Cartucce HP 305",
+    "title": "Le cartucce HP 305 funzionano con Canon PIXMA TS3450?",
+    "verdict": "no",
+    "verdictLabel": "No, sono di un altro sistema",
+    "summary": "HP 305 è una famiglia di cartucce HP e non è compatibile con Canon PIXMA TS3450.",
+    "explanation": "La stampante Canon utilizza PG-545 per il nero e CL-546 per il colore. Anche se le cartucce possono sembrare simili, forma, contatti e codifica sono differenti.",
+    "checks": [
+      "Stampante: Canon PIXMA TS3450",
+      "Cartuccia proposta: HP 305",
+      "Cartucce corrette: Canon PG-545 / CL-546"
+    ],
+    "source": {
+      "label": "Compatibilità ufficiale Canon",
+      "url": "https://www.canon.it/store/canon-confezione-multipla-di-2-inchiostri-canon-pg-545xl-e-cl-546xl-bk-c-m-y-a-resa-elevata/8286B013/"
+    }
+  },
+  {
+    "slug": "hp-deskjet-2720e-cartuccia-hp304",
+    "device": "HP DeskJet 2720e",
+    "product": "Cartuccia HP 304",
+    "title": "HP DeskJet 2720e è compatibile con cartucce HP 304?",
+    "verdict": "no",
+    "verdictLabel": "No, serve HP 305",
+    "summary": "Per HP DeskJet 2720e la famiglia corretta è HP 305 o 305XL, non HP 304.",
+    "explanation": "Una sola cifra nel codice identifica una famiglia diversa. Per questo modello scegli HP 305 nera o tricromia, nella capacità standard oppure XL.",
+    "checks": [
+      "Stampante: HP DeskJet 2720e",
+      "Codice proposto: HP 304",
+      "Codice corretto: HP 305 / 305XL"
+    ],
+    "source": {
+      "label": "Assistenza ufficiale HP",
+      "url": "https://support.hp.com/us-en/document/ish_6365625-6365655-16"
+    }
+  },
+  {
+    "slug": "epson-xp-2200-cartuccia-603",
+    "device": "Epson Expression Home XP-2200",
+    "product": "Cartuccia Epson 603",
+    "title": "Epson XP-2200 può usare cartucce 603?",
+    "verdict": "no",
+    "verdictLabel": "No, usa la famiglia 604",
+    "summary": "Epson XP-2200 utilizza cartucce 604 o 604XL; la famiglia 603 non è quella prevista.",
+    "explanation": "Le famiglie 603 e 604 non sono intercambiabili. Per XP-2200 servono le cartucce separate 604 nero, ciano, magenta e giallo, disponibili anche in versione XL.",
+    "checks": [
+      "Stampante: Epson XP-2200",
+      "Codice proposto: Epson 603",
+      "Codice corretto: Epson 604 / 604XL"
+    ],
+    "relatedSlugs": [
+      "epson-xp-2200-cartuccia-604",
+      "hp-deskjet-2720e-cartuccia-hp-305",
+      "canon-ts3450-cartucce-pg545-cl546"
+    ],
+    "source": {
+      "label": "Scheda ufficiale Epson XP-2200",
+      "url": "https://www.epson.eu/en_EU/products/printers/inkjet/consumer/expression-xp-2200-a4-multifunction-wireless-inkjet-printer-with-6-months-free-ink-with-readyprint-flex-subscription/p/34101"
+    }
+  },
+  {
+    "slug": "ipad-10-apple-pencil-prima-generazione",
+    "device": "iPad 10ª generazione",
+    "product": "Apple Pencil 1ª generazione",
+    "title": "Apple Pencil 1 funziona con iPad 10ª generazione?",
+    "verdict": "limited",
+    "verdictLabel": "Sì, ma serve l’adattatore",
+    "summary": "Apple Pencil di 1ª generazione è compatibile con iPad 10, ma per abbinarla e ricaricarla serve l’adattatore da USB-C a Apple Pencil.",
+    "explanation": "iPad 10 usa USB-C, mentre Apple Pencil di 1ª generazione ha un connettore Lightning. Apple ne conferma la compatibilità solo usando l’apposito adattatore da USB-C a Apple Pencil insieme a un cavo USB-C.",
+    "checks": [
+      "Apple Pencil: 1ª generazione",
+      "Adattatore da USB-C a Apple Pencil",
+      "Cavo di ricarica USB-C"
+    ],
+    "relatedSlugs": [
+      "ipad-10-apple-pencil-usb-c",
+      "ipad-10-apple-pencil-seconda-generazione",
+      "ipad-10-cavo-usb-c-usb-c"
+    ],
+    "source": {
+      "label": "Compatibilità ufficiale Apple Pencil",
+      "url": "https://support.apple.com/it-it/108937"
+    }
+  },
+  {
+    "slug": "ipad-10-apple-pencil-seconda-generazione",
+    "device": "iPad 10ª generazione",
+    "product": "Apple Pencil 2ª generazione",
+    "title": "Apple Pencil 2 funziona con iPad 10ª generazione?",
+    "verdict": "no",
+    "verdictLabel": "No, non è compatibile",
+    "summary": "Apple Pencil di 2ª generazione non è inclusa tra i modelli compatibili con iPad 10ª generazione.",
+    "explanation": "Apple Pencil 2 richiede modelli di iPad che supportano il suo abbinamento e la ricarica magnetica. Per iPad 10 Apple indica invece Apple Pencil USB-C oppure Apple Pencil di 1ª generazione con adattatore.",
+    "checks": [
+      "iPad: 10ª generazione",
+      "Pencil proposta: 2ª generazione",
+      "Alternative: Apple Pencil USB-C o 1ª generazione con adattatore"
+    ],
+    "relatedSlugs": [
+      "ipad-10-apple-pencil-usb-c",
+      "ipad-10-apple-pencil-prima-generazione",
+      "ipad-10-cavo-usb-c-usb-c"
+    ],
+    "source": {
+      "label": "Compatibilità ufficiale Apple Pencil",
+      "url": "https://support.apple.com/it-it/108937"
+    }
+  },
+  {
+    "slug": "ipad-10-apple-pencil-usb-c",
+    "device": "iPad 10ª generazione",
+    "product": "Apple Pencil USB-C",
+    "title": "Apple Pencil USB-C è compatibile con iPad 10?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, è compatibile",
+    "summary": "Apple Pencil USB-C è compatibile con iPad 10ª generazione e si abbina e ricarica tramite cavo USB-C.",
+    "explanation": "Apple include iPad 10ª generazione nell’elenco ufficiale dei modelli supportati da Apple Pencil USB-C. Per il primo abbinamento e per la ricarica si collega la Pencil alla porta USB-C dell’iPad con un cavo.",
+    "checks": [
+      "Modello: Apple Pencil USB-C",
+      "iPadOS aggiornato",
+      "Cavo USB-C per abbinamento e ricarica"
+    ],
+    "relatedSlugs": [
+      "ipad-10-apple-pencil-prima-generazione",
+      "ipad-10-apple-pencil-seconda-generazione",
+      "ipad-10-cavo-usb-c-usb-c"
+    ],
+    "source": {
+      "label": "Compatibilità ufficiale Apple Pencil",
+      "url": "https://support.apple.com/it-it/108937"
+    }
+  },
+  {
+    "slug": "iphone-12-caricatore-magsafe",
+    "device": "iPhone 12",
+    "product": "Caricabatterie MagSafe",
+    "title": "Il caricabatterie MagSafe funziona con iPhone 12?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, è compatibile",
+    "summary": "iPhone 12 supporta la ricarica MagSafe e l’allineamento magnetico del caricatore.",
+    "explanation": "Il caricabatterie MagSafe è progettato per i modelli iPhone 12 e successivi compatibili. Per raggiungere la ricarica wireless rapida prevista per iPhone 12, Apple indica un alimentatore USB-C adeguato; potenza e velocità effettive dipendono anche da temperatura e condizioni d’uso.",
+    "checks": [
+      "Caricatore MagSafe o certificato compatibile",
+      "Alimentatore USB-C da almeno 20 W",
+      "Custodia compatibile con MagSafe"
+    ],
+    "source": {
+      "label": "Guida ufficiale Apple a MagSafe",
+      "url": "https://support.apple.com/it-it/105047"
+    }
+  },
+  {
+    "slug": "iphone-12-alimentatore-usb-c-20w",
+    "device": "iPhone 12",
+    "product": "Alimentatore USB-C 20 W",
+    "title": "Un alimentatore USB-C da 20 W funziona con iPhone 12?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, con il cavo corretto",
+    "summary": "Un alimentatore USB-C da 20 W può caricare rapidamente iPhone 12 usando un cavo USB-C–Lightning.",
+    "explanation": "La porta dell’alimentatore è USB-C, ma quella di iPhone 12 è Lightning. L’alimentatore da 20 W è quindi compatibile quando viene usato con un cavo USB-C–Lightning; un cavo USB-C–USB-C non entra nel telefono.",
+    "checks": [
+      "Alimentatore USB-C da 20 W",
+      "Cavo USB-C–Lightning",
+      "Supporto USB Power Delivery"
+    ],
+    "source": {
+      "label": "Specifiche tecniche Apple di iPhone 12",
+      "url": "https://support.apple.com/it-it/111876"
+    }
+  },
+  {
+    "slug": "airtag-telefono-android",
+    "device": "Apple AirTag",
+    "product": "Telefono Android",
+    "title": "AirTag funziona con un telefono Android?",
+    "seoTitle": "AirTag funziona con Android? No: limiti e alternative",
+    "metaDescription": "Android non può configurare o localizzare un AirTag: può solo leggerlo via NFC se smarrito. Scopri cosa funziona e quali alternative scegliere.",
+    "verdict": "no",
+    "verdictLabel": "No, non come localizzatore personale",
+    "summary": "Un telefono Android non può configurare e seguire un AirTag nell’app Dov’è; può soltanto leggere via NFC le informazioni di un AirTag smarrito.",
+    "explanation": "La configurazione e il monitoraggio di AirTag richiedono un iPhone o iPad e la rete Dov’è di Apple. Uno smartphone Android dotato di NFC può aprire le informazioni rese disponibili dal proprietario quando trova un AirTag in modalità smarrito, ma non può usarlo come proprio tracker.",
+    "checks": [
+      "Per configurarlo serve iPhone o iPad",
+      "Android non offre il monitoraggio nell’app Dov’è",
+      "NFC su Android può leggere un AirTag smarrito"
+    ],
+    "relatedSlugs": [
+      "airtag-batteria-cr2032",
+      "airtag-batteria-cr2025",
+      "airpods-telefono-android"
+    ],
+    "source": {
+      "label": "Informazioni ufficiali Apple su AirTag",
+      "url": "https://www.apple.com/airtag/"
+    }
+  },
+  {
+    "slug": "samsung-galaxy-a15-microsd-1tb",
+    "device": "Samsung Galaxy A15",
+    "product": "Scheda microSD da 1 TB",
+    "title": "Samsung Galaxy A15 supporta una microSD da 1 TB?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, fino a 1 TB",
+    "summary": "Samsung dichiara per Galaxy A15 il supporto a schede microSD con capacità fino a 1 TB.",
+    "explanation": "La memoria del Galaxy A15 può essere ampliata con una microSD fino al limite dichiarato di 1 TB. La scheda è venduta separatamente e alcune app potrebbero non poter essere trasferite completamente sulla memoria esterna.",
+    "checks": [
+      "Formato: microSD",
+      "Capacità massima dichiarata: 1 TB",
+      "Scheda originale e di classe adeguata"
+    ],
+    "source": {
+      "label": "Specifiche ufficiali Samsung Galaxy A15",
+      "url": "https://www.samsung.com/it/smartphones/galaxy-a/galaxy-a15-blue-128gb-sm-a155fzbdeue/"
+    }
+  },
+  {
+    "slug": "samsung-galaxy-a15-microsd-2tb",
+    "device": "Samsung Galaxy A15",
+    "product": "Scheda microSD da 2 TB",
+    "title": "Samsung Galaxy A15 supporta una microSD da 2 TB?",
+    "verdict": "no",
+    "verdictLabel": "Non è una capacità supportata ufficialmente",
+    "summary": "Samsung dichiara per Galaxy A15 una capacità microSD massima di 1 TB, non 2 TB.",
+    "explanation": "Una scheda da 2 TB supera il limite ufficiale indicato da Samsung per Galaxy A15. Anche se formato e alloggiamento sono gli stessi, per evitare mancati riconoscimenti o instabilità è preferibile restare entro 1 TB.",
+    "checks": [
+      "Limite ufficiale: 1 TB",
+      "Capacità proposta: 2 TB",
+      "Alternativa: microSD fino a 1 TB"
+    ],
+    "source": {
+      "label": "Specifiche ufficiali Samsung Galaxy A15",
+      "url": "https://www.samsung.com/it/smartphones/galaxy-a/galaxy-a15-blue-128gb-sm-a155fzbdeue/"
+    }
+  },
+  {
+    "slug": "samsung-galaxy-a35-microsd-1tb",
+    "device": "Samsung Galaxy A35 5G",
+    "product": "Scheda microSD da 1 TB",
+    "title": "Samsung Galaxy A35 supporta una microSD da 1 TB?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, è compatibile",
+    "summary": "Galaxy A35 5G dispone di memoria espandibile tramite microSD fino a 1 TB.",
+    "explanation": "Samsung indica per Galaxy A35 5G configurazioni interne da 128 o 256 GB espandibili fino a 1 TB con microSD. La scheda va acquistata separatamente.",
+    "checks": [
+      "Modello: Galaxy A35 5G",
+      "Formato: microSD",
+      "Capacità massima dichiarata: 1 TB"
+    ],
+    "source": {
+      "label": "Specifiche ufficiali Samsung Galaxy A35 5G",
+      "url": "https://www.samsung.com/it/smartphones/galaxy-a/galaxy-a35-5g-awesome-iceblue-128gb-sm-a356blbbeue/"
+    }
+  },
+  {
+    "slug": "dualshock-4-giochi-ps5",
+    "device": "PlayStation 5",
+    "product": "Controller DUALSHOCK 4",
+    "title": "Il controller PS4 DUALSHOCK 4 funziona con i giochi PS5?",
+    "verdict": "no",
+    "verdictLabel": "No, non con i giochi PS5",
+    "summary": "DUALSHOCK 4 può essere collegato a PS5, ma è previsto per i giochi PS4 supportati e non per giocare ai titoli PS5.",
+    "explanation": "Sony conferma che DUALSHOCK 4 e i gamepad PS4 con licenza ufficiale funzionano su PS5 con i giochi PS4 supportati. Per i giochi nativi PS5 serve invece un controller DualSense o un controller PS5 compatibile.",
+    "checks": [
+      "Console: PS5",
+      "Gioco: versione PS5 o PS4",
+      "Per titoli PS5 scegli DualSense"
+    ],
+    "source": {
+      "label": "Compatibilità ufficiale degli accessori PlayStation",
+      "url": "https://blog.playstation.com/2020/08/03/playstation-5-answering-your-questions-on-compatible-ps4-peripherals-accessories/"
+    }
+  },
+  {
+    "slug": "dualshock-4-giochi-ps4-su-ps5",
+    "device": "PlayStation 5",
+    "product": "DUALSHOCK 4 con giochi PS4",
+    "title": "DUALSHOCK 4 funziona con i giochi PS4 su PS5?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, con i giochi PS4 supportati",
+    "summary": "Su PS5 il controller DUALSHOCK 4 può essere usato per giocare ai titoli PS4 compatibili.",
+    "explanation": "Il controller PS4 può essere associato alla console PS5 e utilizzato con i giochi PS4 supportati dalla retrocompatibilità. Non va però considerato un sostituto del DualSense per i giochi sviluppati per PS5.",
+    "checks": [
+      "Avvia la versione PS4 del gioco",
+      "Associa il controller alla PS5",
+      "Per la versione PS5 usa DualSense"
+    ],
+    "source": {
+      "label": "Compatibilità ufficiale degli accessori PlayStation",
+      "url": "https://blog.playstation.com/2020/08/03/playstation-5-answering-your-questions-on-compatible-ps4-peripherals-accessories/"
+    }
+  },
+  {
+    "slug": "disco-ps4-ps5-digital-edition",
+    "device": "PS5 Digital Edition",
+    "product": "Disco di un gioco PS4",
+    "title": "I dischi PS4 funzionano su PS5 Digital Edition?",
+    "verdict": "no",
+    "verdictLabel": "No, manca il lettore disco",
+    "summary": "PS5 Digital Edition senza unità disco non può leggere dischi di giochi PS4.",
+    "explanation": "La retrocompatibilità non sostituisce il lettore fisico. Sony specifica che i dischi PS4 non possono essere utilizzati su una PS5 Digital Edition priva di unità disco; occorre possedere la versione digitale del gioco compatibile.",
+    "checks": [
+      "Modello PS5 privo di lettore",
+      "Gioco acquistato su disco",
+      "Alternativa: versione digitale compatibile"
+    ],
+    "source": {
+      "label": "Retrocompatibilità ufficiale PlayStation",
+      "url": "https://www.playstation.com/it-it/support/games/ps5-backward-compatibility-games/"
+    }
+  },
+  {
+    "slug": "disco-ps4-ps5-con-lettore",
+    "device": "PS5 con unità disco",
+    "product": "Disco di un gioco PS4",
+    "title": "Un disco PS4 funziona su PS5 con lettore?",
+    "verdict": "limited",
+    "verdictLabel": "Sì, se il gioco è retrocompatibile",
+    "summary": "La PS5 con unità disco può leggere la grande maggioranza dei giochi PS4, ma esistono eccezioni e può essere richiesto un aggiornamento.",
+    "explanation": "Inserendo un disco PS4 compatibile nella PS5 con lettore puoi installare e avviare il gioco; il disco deve restare inserito durante le sessioni. Alcuni titoli PS4 non sono compatibili e un eventuale upgrade alla versione PS5 dipende dal singolo gioco.",
+    "checks": [
+      "PS5 dotata di unità disco",
+      "Titolo incluso nella retrocompatibilità",
+      "Disco inserito durante il gioco"
+    ],
+    "source": {
+      "label": "Retrocompatibilità ufficiale PlayStation",
+      "url": "https://www.playstation.com/it-it/support/games/ps5-backward-compatibility-games/"
+    }
+  },
+  {
+    "slug": "hard-disk-esterno-giochi-ps5",
+    "device": "PlayStation 5",
+    "product": "Hard disk esterno USB per giochi PS5",
+    "title": "Si può giocare ai giochi PS5 da un hard disk esterno USB?",
+    "verdict": "limited",
+    "verdictLabel": "Puoi archiviarli, ma non avviarli",
+    "summary": "I giochi PS5 possono essere conservati su memoria USB, ma per giocarli vanno trasferiti nella memoria interna o su un SSD M.2 compatibile.",
+    "explanation": "L’archiviazione estesa USB è utile per liberare spazio senza riscaricare i giochi PS5. Tuttavia la console non li esegue direttamente dall’unità USB: prima dell’avvio devono essere copiati nella memoria della PS5 o in un SSD M.2 installato.",
+    "checks": [
+      "USB SuperSpeed da almeno 5 Gbps",
+      "Capacità tra 250 GB e 8 TB",
+      "Per giocare trasferisci il titolo su memoria interna o M.2"
+    ],
+    "source": {
+      "label": "Archiviazione estesa USB su PS5",
+      "url": "https://www.playstation.com/it-it/support/hardware/ps5-extended-storage/"
+    }
+  },
+  {
+    "slug": "hard-disk-esterno-giochi-ps4-su-ps5",
+    "device": "PlayStation 5",
+    "product": "Hard disk esterno USB per giochi PS4",
+    "title": "Si può giocare ai giochi PS4 da un hard disk esterno su PS5?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, i giochi PS4 possono partire dall’USB",
+    "summary": "Su PS5 i giochi PS4 compatibili possono essere memorizzati e riprodotti direttamente da un’unità USB idonea.",
+    "explanation": "A differenza dei giochi PS5, i titoli PS4 retrocompatibili possono essere avviati direttamente dalla memoria di archiviazione estesa USB. L’unità deve rispettare i requisiti Sony ed essere formattata dalla console.",
+    "checks": [
+      "USB SuperSpeed da almeno 5 Gbps",
+      "Capacità tra 250 GB e 8 TB",
+      "Formattazione come archiviazione estesa"
+    ],
+    "source": {
+      "label": "Archiviazione estesa USB su PS5",
+      "url": "https://www.playstation.com/it-it/support/hardware/ps5-extended-storage/"
+    }
+  },
+  {
+    "slug": "ssd-m2-nvme-ps5",
+    "device": "PlayStation 5",
+    "product": "SSD M.2 NVMe con dissipatore",
+    "title": "Un SSD M.2 NVMe funziona su PS5?",
+    "verdict": "limited",
+    "verdictLabel": "Sì, se rispetta tutti i requisiti",
+    "summary": "PS5 supporta SSD M.2 NVMe compatibili, ma formato, interfaccia, dimensioni, velocità e dissipazione devono rispettare le specifiche Sony.",
+    "explanation": "Non basta che l’unità sia chiamata M.2. Sony richiede un SSD PCIe Gen4 x4 M.2 NVMe con adeguata dissipazione del calore e raccomanda una velocità di lettura sequenziale di almeno 5.500 MB/s. Dopo l’installazione la console formatta l’unità.",
+    "checks": [
+      "PCIe Gen4 x4 M.2 NVMe",
+      "Lettura consigliata: almeno 5.500 MB/s",
+      "Dissipatore e dimensioni compatibili con il vano PS5"
+    ],
+    "source": {
+      "label": "Requisiti ufficiali SSD M.2 per PS5",
+      "url": "https://www.playstation.com/it-it/support/hardware/ps5-install-m2-ssd/"
+    }
+  },
+  {
+    "slug": "ssd-m2-sata-ps5",
+    "device": "PlayStation 5",
+    "product": "SSD M.2 SATA",
+    "title": "Un SSD M.2 SATA è compatibile con PS5?",
+    "verdict": "no",
+    "verdictLabel": "No, gli SSD M.2 SATA non sono supportati",
+    "summary": "La forma M.2 non basta: PS5 richiede un SSD M.2 NVMe PCIe compatibile e non accetta unità M.2 SATA.",
+    "explanation": "M.2 identifica il formato fisico, mentre SATA e NVMe indicano interfacce differenti. Sony esclude espressamente gli SSD M.2 SATA dal vano di espansione della PS5.",
+    "checks": [
+      "Interfaccia proposta: SATA",
+      "Interfaccia richiesta: PCIe Gen4 x4 NVMe",
+      "Scegli un modello dichiarato compatibile con PS5"
+    ],
+    "source": {
+      "label": "Requisiti ufficiali SSD M.2 per PS5",
+      "url": "https://www.playstation.com/it-it/support/hardware/ps5-install-m2-ssd/"
+    }
+  },
+  {
+    "slug": "cuffie-bluetooth-ps5",
+    "device": "PlayStation 5",
+    "product": "Cuffie Bluetooth generiche",
+    "title": "Le cuffie Bluetooth si collegano direttamente a PS5?",
+    "seoTitle": "Cuffie Bluetooth su PS5: funzionano? No, ecco le alternative",
+    "metaDescription": "Le cuffie Bluetooth generiche non si collegano direttamente a PS5. Puoi usare USB, il jack del DualSense o un adattatore compatibile.",
+    "verdict": "no",
+    "verdictLabel": "No, il Bluetooth audio diretto non è supportato",
+    "summary": "Le normali cuffie Bluetooth non vengono supportate direttamente dalla PS5; servono cuffie USB compatibili, il jack del DualSense o un adattatore dedicato.",
+    "explanation": "Sony indica che le cuffie wireless di terze parti basate sulla normale connessione Bluetooth non sono supportate dalla PS5. Molte cuffie USB e analogiche funzionano invece tramite adattatore USB compatibile o jack da 3,5 mm del controller.",
+    "checks": [
+      "Bluetooth generico: non supportato direttamente",
+      "Alternative: USB o jack da 3,5 mm",
+      "Per wireless usa un adattatore dichiarato compatibile con PS5"
+    ],
+    "relatedSlugs": [
+      "ssd-m2-nvme-ps5",
+      "dualshock-4-giochi-ps5",
+      "disco-ps4-ps5-con-lettore"
+    ],
+    "source": {
+      "label": "FAQ ufficiale PlayStation 5",
+      "url": "https://blog.playstation.com/2020/11/09/ps5-the-ultimate-faq/"
+    }
+  },
+  {
+    "slug": "airpods-telefono-android",
+    "device": "Telefono Android",
+    "product": "Apple AirPods",
+    "title": "Gli AirPods funzionano con Android?",
+    "seoTitle": "AirPods con Android: funzionano? Sì, ma con alcuni limiti",
+    "metaDescription": "Gli AirPods si collegano ad Android via Bluetooth per musica e chiamate, ma Siri e alcune funzioni Apple non sono disponibili. Ecco cosa funziona.",
+    "verdict": "limited",
+    "verdictLabel": "Sì, come normali cuffie Bluetooth",
+    "summary": "Gli AirPods possono riprodurre audio e gestire chiamate su Android, ma alcune funzioni dell’ecosistema Apple non sono disponibili.",
+    "explanation": "Apple conferma che gli AirPods possono essere abbinati a un dispositivo non Apple tramite Bluetooth. Su Android puoi ascoltare e parlare, ma non puoi usare Siri e mancano alcune integrazioni automatiche disponibili con iPhone, iPad e Mac.",
+    "checks": [
+      "Bluetooth attivo sul telefono",
+      "Custodia in modalità abbinamento",
+      "Siri e alcune funzioni Apple non disponibili"
+    ],
+    "relatedSlugs": [
+      "airtag-telefono-android",
+      "cuffie-bluetooth-ps5"
+    ],
+    "source": {
+      "label": "Guida ufficiale Apple per dispositivi non Apple",
+      "url": "https://support.apple.com/it-it/guide/airpods/dev499c9718b/web"
+    }
+  },
+  {
+    "slug": "caricatore-samsung-25w-iphone-15",
+    "device": "iPhone 15",
+    "product": "Caricatore Samsung USB-C PD da 25 W",
+    "title": "Un caricatore Samsung da 25 W funziona con iPhone 15?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, se supporta USB Power Delivery",
+    "summary": "Un alimentatore Samsung USB-C da 25 W con PD può caricare iPhone 15 usando un cavo USB-C–USB-C.",
+    "explanation": "iPhone 15 accetta alimentatori USB-C conformi allo standard, incluso USB Power Delivery. Il caricatore Samsung EP-T2510 supporta PD 3.0 e dispone di uscita USB-C: il telefono negozia automaticamente la potenza necessaria.",
+    "checks": [
+      "Alimentatore Samsung con uscita USB-C",
+      "Supporto USB Power Delivery",
+      "Cavo USB-C–USB-C"
+    ],
+    "source": {
+      "label": "Specifiche ufficiali Samsung del caricatore 25 W",
+      "url": "https://www.samsung.com/it/mobile-accessories/25w-power-adapter-black-ep-t2510nbegeu/"
+    }
+  },
+  {
+    "slug": "nintendo-switch-microsd-1tb",
+    "device": "Nintendo Switch",
+    "product": "Scheda microSDXC da 1 TB",
+    "title": "Nintendo Switch supporta una microSD da 1 TB?",
+    "verdict": "yes",
+    "verdictLabel": "Sì, è compatibile",
+    "summary": "Nintendo Switch supporta schede microSDXC fino a 2 TB, quindi una microSD da 1 TB rientra nel limite previsto.",
+    "explanation": "Nintendo indica il supporto a microSDHC e microSDXC fino a 2 TB. Con una scheda microSDXC potrebbe essere richiesto un aggiornamento di sistema e la scheda deve essere inserita o rimossa a console spenta.",
+    "checks": [
+      "Formato: microSDXC",
+      "Capacità: 1 TB",
+      "Aggiorna la console se richiesto"
+    ],
+    "source": {
+      "label": "Specifiche ufficiali Nintendo Switch",
+      "url": "https://www.nintendo.com/us/gaming-systems/switch/tech-specs/"
+    }
+  }
+]

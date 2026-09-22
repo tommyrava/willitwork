@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Original site mirror downloaded via wget — reference material only,
+# not part of the generated project (dist/ is what gets published).
+willitwork.it/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Env files (should never contain committed secrets)
+.env
+.env.*
+!.env.example
