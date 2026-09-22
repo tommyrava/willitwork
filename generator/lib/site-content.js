@@ -17,9 +17,13 @@ const WEBSITE_LD_JSON = {
 };
 
 // The homepage's "quick examples" strip (3 buttons under the checker form).
-// Only the button labels are real content on a static page; the onClick
-// prefill behaviour (device/product) is JS interactivity, out of scope here.
-const QUICK_EXAMPLES = ['iPhone + USB-A', 'MacBook + 65 W', 'Galaxy + Lightning'];
+// label is the short button text; device/product are what checker.js fills
+// the form with (and searches for) when the button is clicked.
+const QUICK_EXAMPLES = [
+  { label: 'iPhone + USB-A', device: 'iPhone 12', product: 'Cavo USB-A' },
+  { label: 'MacBook + 65 W', device: 'MacBook Air M1 2020', product: 'Caricatore USB-C Power Delivery 65W' },
+  { label: 'Galaxy + Lightning', device: 'Samsung Galaxy S24', product: 'Cavo Lightning' },
+];
 
 // The homepage's "Controlli popolari" grid (8 device/product pairs).
 const POPULAR_EXAMPLES = [

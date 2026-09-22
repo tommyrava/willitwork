@@ -78,18 +78,27 @@ function main() {
   const robots = `User-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/\n\nSitemap: https://willitwork.it/sitemap.xml\n`;
   fs.writeFileSync(path.join(OUT_DIR, 'robots.txt'), robots, 'utf8');
 
-  // 7. Static assets needed to render the pages (stylesheet + logo).
-  //    The original React/RSC client bundles are NOT copied: this generator
-  //    produces plain static HTML and does not reimplement the homepage's
-  //    interactive JS checker widget (out of scope — see report).
+  // 7. Static assets needed to render the pages (stylesheet, logo, and the
+  //    vanilla-JS checker that powers the homepage search form). The
+  //    original React/RSC client bundles are NOT copied: this generator
+  //    produces plain static HTML/CSS/JS, not a reimplementation of the
+  //    original app.
   fs.mkdirSync(path.join(OUT_DIR, 'assets'), { recursive: true });
   fs.copyFileSync(
     path.join(ASSETS_SRC, 'index-CI5d9a33.css'),
     path.join(OUT_DIR, 'assets', 'index-CI5d9a33.css')
   );
+  fs.copyFileSync(path.join(STATIC_SRC, 'checker.js'), path.join(OUT_DIR, 'assets', 'checker.js'));
   fs.copyFileSync(LOGO_SRC, path.join(OUT_DIR, 'will-it-work-logo.png'));
 
-  console.log(`Generated ${dataset.length} guide pages + 4 site pages + sitemap.xml + robots.txt in ${OUT_DIR}`);
+  // 8. search-index.json — a trimmed copy of the dataset (only the fields
+  //    checker.js needs) so the homepage search doesn't have to download
+  //    the full dataset (explanations, checks, sources, etc.) just to
+  //    match a device/product pair to its guide page.
+  const searchIndex = dataset.map((e) => ({ slug: e.slug, device: e.device, product: e.product, title: e.title }));
+  fs.writeFileSync(path.join(OUT_DIR, 'search-index.json'), JSON.stringify(searchIndex), 'utf8');
+
+  console.log(`Generated ${dataset.length} guide pages + 4 site pages + sitemap.xml + robots.txt + search-index.json in ${OUT_DIR}`);
 }
 
 main();
