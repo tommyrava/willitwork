@@ -1,0 +1,13 @@
+{
+  "name": "willitwork-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static site generator that rebuilds willitwork.it from data/compatibility-dataset.json.",
+  "scripts": {
+    "build": "node generator/build.js",
+    "verify": "node generator/verify.js && node generator/verify-fields.js && node generator/verify-site-pages.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
