@@ -1,0 +1,131 @@
+{
+  "_comment": "Dati per il calcolatore/verificatore di compatibilità batterie. Modulo 'a regole' separato da compatibility-dataset.json. Tutte le dimensioni vengono da schede tecniche ufficiali di produttore (Energizer per AA/AAA/C/D/9V/CR2032/CR2025/CR2016/CR123A, Panasonic per 18650), non da stime. I nomi alternativi (Stilo, Mignon, ecc.) vengono da Wikipedia/rivenditori, non dalle schede tecniche dimensionali.",
+  "formats": [
+    {
+      "id": "AA",
+      "label": "AA",
+      "shape": "cylindrical",
+      "diameterMin": 13.5, "diameterMax": 14.5,
+      "heightMin": 49.5, "heightMax": 50.5,
+      "nimhCapable": true,
+      "altNames": ["LR6", "R6", "ANSI-15A", "Stilo (IT)", "Mignon (DE)", "Penlite"],
+      "source": { "label": "Energizer E91 — scheda tecnica ufficiale", "url": "https://data.energizer.com/pdfs/e91.pdf" }
+    },
+    {
+      "id": "AAA",
+      "label": "AAA",
+      "shape": "cylindrical",
+      "diameterMin": 9.5, "diameterMax": 10.5,
+      "heightMin": 43.3, "heightMax": 44.5,
+      "nimhCapable": true,
+      "altNames": ["LR03", "R03", "ANSI-24A", "Ministilo (IT)", "Micro (DE)"],
+      "source": { "label": "Energizer E92 — scheda tecnica ufficiale", "url": "https://data.energizer.com/pdfs/e92.pdf" }
+    },
+    {
+      "id": "C",
+      "label": "C",
+      "shape": "cylindrical",
+      "diameterMin": 24.9, "diameterMax": 26.2,
+      "heightMin": 48.5, "heightMax": 50.0,
+      "nimhCapable": true,
+      "altNames": ["LR14", "R14", "ANSI-14A", "Mezza torcia (IT)", "Baby (DE)"],
+      "source": { "label": "Energizer E93 — scheda tecnica ufficiale", "url": "https://data.energizer.com/pdfs/e93.pdf" }
+    },
+    {
+      "id": "D",
+      "label": "D",
+      "shape": "cylindrical",
+      "diameterMin": 32.3, "diameterMax": 34.2,
+      "heightMin": 59.5, "heightMax": 61.5,
+      "nimhCapable": true,
+      "altNames": ["LR20", "R20", "ANSI-13A", "Torcia (IT)", "Mono (DE)"],
+      "source": { "label": "Energizer E95 — scheda tecnica ufficiale", "url": "https://data.energizer.com/pdfs/e95.pdf" }
+    },
+    {
+      "id": "9V",
+      "label": "9V (PP3)",
+      "shape": "rectangular",
+      "widthMin": 24.5, "widthMax": 26.5,
+      "depthMin": 15.5, "depthMax": 17.5,
+      "heightMin": 46.5, "heightMax": 48.5,
+      "nimhCapable": false,
+      "altNames": ["PP3", "6LR61", "6F22", "ANSI-1604A"],
+      "source": { "label": "Energizer 522 — scheda tecnica ufficiale", "url": "https://data.energizer.com/pdfs/522.pdf" }
+    },
+    {
+      "id": "CR2032",
+      "label": "CR2032",
+      "shape": "coin",
+      "coinGroup": "cr20",
+      "diameterMin": 19.7, "diameterMax": 20.0,
+      "thicknessMin": 2.9, "thicknessMax": 3.2,
+      "nimhCapable": false,
+      "altNames": ["ANSI/NEDA-5004LC", "IEC-CR2032"],
+      "source": { "label": "Energizer CR2032 — scheda tecnica ufficiale", "url": "https://data.energizer.com/pdfs/cr2032.pdf" }
+    },
+    {
+      "id": "CR2025",
+      "label": "CR2025",
+      "shape": "coin",
+      "coinGroup": "cr20",
+      "diameterMin": 19.7, "diameterMax": 20.0,
+      "thicknessMin": 2.2, "thicknessMax": 2.5,
+      "nimhCapable": false,
+      "altNames": ["ANSI/NEDA-5003LC", "IEC-CR2025"],
+      "source": { "label": "Energizer CR2025 — scheda tecnica ufficiale", "url": "https://data.energizer.com/pdfs/cr2025.pdf" }
+    },
+    {
+      "id": "CR2016",
+      "label": "CR2016",
+      "shape": "coin",
+      "coinGroup": "cr20",
+      "diameterMin": 19.8, "diameterMax": 20.0,
+      "thicknessMin": 1.4, "thicknessMax": 1.6,
+      "nimhCapable": false,
+      "altNames": ["ANSI/NEDA-5000LC", "IEC-CR2016"],
+      "source": { "label": "Energizer CR2016 — scheda tecnica ufficiale", "url": "https://data.energizer.com/pdfs/cr2016.pdf" }
+    },
+    {
+      "id": "CR123A",
+      "label": "CR123A",
+      "shape": "cylindrical",
+      "diameterMin": 16.0, "diameterMax": 17.0,
+      "heightMin": 33.5, "heightMax": 34.5,
+      "nimhCapable": false,
+      "altNames": ["EL123 / EL123A", "123", "IEC-CR17345"],
+      "source": { "label": "Energizer 123 (EL123AP) — scheda tecnica ufficiale", "url": "https://data.energizer.com/pdfs/123.pdf" }
+    },
+    {
+      "id": "18650",
+      "label": "18650",
+      "shape": "cylindrical",
+      "diameterMin": null, "diameterMax": 18.25,
+      "heightMin": null, "heightMax": 65.10,
+      "nimhCapable": false,
+      "altNames": ["NCR18650B", "INR18650", "ICR18650"],
+      "source": { "label": "Panasonic NCR18650B — scheda tecnica ufficiale", "url": "https://www.shoptronica.com/files/Panasonic-NCR18650.pdf" },
+      "extraWarning": "Le 18650 non sono tutte uguali anche a parità di dimensioni: esistono varianti con protezione elettronica (più lunghe di qualche mm) o senza, e con contatto positivo a bottone sporgente o piatto. Una 18650 sbagliata può non entrare, non fare contatto, o — nei casi peggiori con celle non protette in dispositivi che si aspettano la protezione — creare un rischio di sicurezza. Verifica sempre le specifiche indicate dal produttore del tuo dispositivo prima di sostituirla."
+    }
+  ],
+  "variants": [
+    { "id": "AA-alkaline", "formatId": "AA", "chemistry": "Alcalina / zinco-carbone", "voltage": 1.5, "label": "AA (alcalina, 1,5 V)" },
+    { "id": "AA-nimh", "formatId": "AA", "chemistry": "NiMH ricaricabile", "voltage": 1.2, "label": "AA ricaricabile (NiMH, 1,2 V)" },
+    { "id": "AAA-alkaline", "formatId": "AAA", "chemistry": "Alcalina / zinco-carbone", "voltage": 1.5, "label": "AAA (alcalina, 1,5 V)" },
+    { "id": "AAA-nimh", "formatId": "AAA", "chemistry": "NiMH ricaricabile", "voltage": 1.2, "label": "AAA ricaricabile (NiMH, 1,2 V)" },
+    { "id": "C-alkaline", "formatId": "C", "chemistry": "Alcalina / zinco-carbone", "voltage": 1.5, "label": "C (alcalina, 1,5 V)" },
+    { "id": "C-nimh", "formatId": "C", "chemistry": "NiMH ricaricabile", "voltage": 1.2, "label": "C ricaricabile (NiMH, 1,2 V)" },
+    { "id": "D-alkaline", "formatId": "D", "chemistry": "Alcalina / zinco-carbone", "voltage": 1.5, "label": "D (alcalina, 1,5 V)" },
+    { "id": "D-nimh", "formatId": "D", "chemistry": "NiMH ricaricabile", "voltage": 1.2, "label": "D ricaricabile (NiMH, 1,2 V)" },
+    { "id": "9V", "formatId": "9V", "chemistry": "Alcalina", "voltage": 9.0, "label": "9V (PP3)" },
+    { "id": "CR2032", "formatId": "CR2032", "chemistry": "Litio (bottone)", "voltage": 3.0, "label": "CR2032" },
+    { "id": "CR2025", "formatId": "CR2025", "chemistry": "Litio (bottone)", "voltage": 3.0, "label": "CR2025" },
+    { "id": "CR2016", "formatId": "CR2016", "chemistry": "Litio (bottone)", "voltage": 3.0, "label": "CR2016" },
+    { "id": "CR123A", "formatId": "CR123A", "chemistry": "Litio (cilindrica)", "voltage": 3.0, "label": "CR123A" },
+    { "id": "18650", "formatId": "18650", "chemistry": "Li-ion ricaricabile", "voltage": 3.6, "label": "18650" }
+  ],
+  "coinThinnerWarning": "Il diametro è lo stesso ed entra fisicamente nel vano, ma è più sottile di quanto previsto: la molla di contatto potrebbe non premere a sufficienza, causando contatto instabile o intermittente (es. un orologio che si resetta).",
+  "coinThickerWarning": "Il diametro è lo stesso, ma è più spessa di quanto previsto: potrebbe non entrare fino in fondo, oppure entrare forzando lo sportellino o la molla di contatto del vano.",
+  "nimhLowerVoltageWarning": "Le dimensioni sono identiche ed entra perfettamente, ma il dispositivo si aspetta probabilmente 1,5 V (alcalina) mentre questa è una ricaricabile NiMH da 1,2 V: non è un problema di ingombro ma di prestazioni — possibile flash più debole, autonomia diversa, indicatore di carica impreciso.",
+  "nimhHigherVoltageWarning": "Le dimensioni sono identiche ed entra perfettamente, ma il dispositivo sembra pensato per una ricaricabile NiMH da 1,2 V mentre questa è un'alcalina da 1,5 V: nella maggior parte dei dispositivi va bene, ma se il tuo è progettato specificamente per il voltaggio più basso NiMH (raro, es. alcuni caricabatterie dedicati) il voltaggio più alto potrebbe non essere adatto.",
+  "disclaimer": "Questi dati sono indicazioni generali tratte da schede tecniche di produttori terzi, non specifiche del prodotto che hai in mano. Verifica sempre le indicazioni riportate sulla confezione della batteria e le specifiche del tuo dispositivo. Per dispositivi medicali o di sicurezza, rivolgiti a un professionista o al produttore."
+}

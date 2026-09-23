@@ -67,7 +67,7 @@ function renderHead(opts) {
 // ---------------------------------------------------------------------
 
 function headerHome() {
-  return `<header class="nav-wrap"><nav class="nav" aria-label="Navigazione principale"><a class="brand" href="/#top" aria-label="Will It Work, home"><span class="brand-mark"><img src="/will-it-work-logo.png" alt=""/></span><span>Will It Work?</span></a><div class="nav-links"><a href="/#come-funziona">Come funziona</a><a href="/compatibilita">Tutte le verifiche</a><a href="/#categorie">Categorie</a><a href="/calcolatori/vite-tassello">Calcolatore tasselli</a></div><a class="nav-cta" href="/#checker">Prova ora</a></nav></header>`;
+  return `<header class="nav-wrap"><nav class="nav" aria-label="Navigazione principale"><a class="brand" href="/#top" aria-label="Will It Work, home"><span class="brand-mark"><img src="/will-it-work-logo.png" alt=""/></span><span>Will It Work?</span></a><div class="nav-links"><a href="/#come-funziona">Come funziona</a><a href="/compatibilita">Tutte le verifiche</a><a href="/#categorie">Categorie</a><a href="/calcolatori/vite-tassello">Calcolatore tasselli</a><a href="/calcolatori/batterie">Verificatore batterie</a></div><a class="nav-cta" href="/#checker">Prova ora</a></nav></header>`;
 }
 
 function headerGuideNav(linkHref, linkText) {
@@ -388,6 +388,72 @@ function renderWallAnchorCalculatorPage(rules) {
   return `<!DOCTYPE html><html lang="it"><head>${head}</head><body>${body}</body></html>`;
 }
 
+// ---------------------------------------------------------------------
+// Battery format checker (/calcolatori/batterie)
+// ---------------------------------------------------------------------
+
+function formatDimensions(f) {
+  if (f.shape === 'rectangular') {
+    return `${f.widthMin}–${f.widthMax} × ${f.depthMin}–${f.depthMax} × ${f.heightMin}–${f.heightMax} mm (L×P×H)`;
+  }
+  const dMax = f.diameterMax;
+  const dMin = f.diameterMin != null ? f.diameterMin : null;
+  const dText = dMin != null ? `Ø ${dMin}–${dMax} mm` : `Ø max ${dMax} mm`;
+  const hMax = f.heightMax != null ? f.heightMax : f.thicknessMax;
+  const hMin = f.heightMin != null ? f.heightMin : f.thicknessMin;
+  const hLabel = f.shape === 'coin' ? 'spessore' : 'altezza';
+  const hText = hMin != null ? `${hLabel} ${hMin}–${hMax} mm` : `${hLabel} max ${hMax} mm`;
+  return `${dText}, ${hText}`;
+}
+
+function formatVoltage(f) {
+  if (f.nimhCapable) return '1,5 V (alcalina) / 1,2 V (NiMH ricaricabile)';
+  if (f.id === '18650') return '3,6 V (ricaricabile Li-ion)';
+  if (f.id === '9V') return '9 V';
+  return '3 V (litio)';
+}
+
+function renderBatteryTableRow(f) {
+  return `<tr><td>${escapeHtml(f.label)}</td><td>${formatDimensions(f)}</td><td>${formatVoltage(f)}</td><td>${escapeHtml(
+    f.altNames.join(', ')
+  )}</td><td><small>${renderSourceLinks([f.source])}</small></td></tr>`;
+}
+
+function renderBatteryCheckerPage(data) {
+  const head = renderHead({
+    title: 'Le batterie sono compatibili? Verificatore formati — Will It Work?',
+    description: 'Confronta due formati di batteria (AA, AAA, CR2032, 18650 e altri) e scopri se sono davvero intercambiabili, con le fonti tecniche verificate.',
+    ogTitle: 'Le batterie sono compatibili? Verificatore formati',
+    ogDescription: 'Confronta due formati di batteria e scopri se sono davvero intercambiabili, con le fonti tecniche verificate.',
+    ogType: 'article',
+    twitterTitle: 'Le batterie sono compatibili? Verificatore formati',
+    twitterDescription: 'Confronta due formati di batteria e scopri se sono davvero intercambiabili, con le fonti tecniche verificate.',
+    iconHref: '/will-it-work-logo.png',
+    canonical: 'https://willitwork.it/calcolatori/batterie',
+    includeWebsiteLdJson: false,
+  });
+
+  const options = data.variants.map((v) => `<option value="${escapeHtml(v.id)}">${escapeHtml(v.label)}</option>`).join('');
+  const tableRows = data.formats.map(renderBatteryTableRow).join('');
+
+  const body = `<main class="guide-page">${headerGuideNav(
+    '/#checker',
+    'Verifica un prodotto'
+  )}<article class="guide-article"><nav aria-label="Percorso"><a href="/">Home</a><span>›</span><span>Calcolatori</span></nav><div class="guide-kicker">VERIFICATORE</div><h1>Le batterie sono compatibili?</h1><p class="guide-lead">Seleziona cosa richiede il tuo dispositivo e cosa hai in mano: ti diciamo se vanno bene, non vanno bene, o vanno bene con attenzione.</p><div class="checker-shell" id="verificatore"><form id="battery-form"><div class="checker-title"><span class="live-dot"></span><div><strong>Verifica formato batteria</strong><small>Dati da schede tecniche ufficiali dei produttori</small></div></div><label for="device-battery">Che batteria richiede il tuo dispositivo?</label><div class="input-wrap"><span class="input-icon">⌁</span><select id="device-battery">${options}</select></div><div class="connector"><span>+</span></div><label for="have-battery">Che batteria hai in mano?</label><div class="input-wrap"><span class="input-icon">↗</span><select id="have-battery">${options}</select></div></form><div class="tool-disclaimer">⚠ ${escapeHtml(
+    data.disclaimer
+  )}</div><div id="tool-result" class="checker-result" hidden aria-live="polite"></div></div><section class="guide-copy"><h2>Tabella completa dei formati</h2><table class="anchor-table"><thead><tr><th>Formato</th><th>Dimensioni</th><th>Voltaggio</th><th>Nomi alternativi</th><th>Fonte</th></tr></thead><tbody>${tableRows}</tbody></table><h2>Casi da trattare con attenzione</h2><p><strong>CR2032 / CR2025 / CR2016</strong>: stesso diametro (~20 mm), spessore diverso. ${escapeHtml(
+    data.coinThinnerWarning
+  )} ${escapeHtml(data.coinThickerWarning)}</p><p><strong>Alcalina vs NiMH ricaricabile</strong> (AA, AAA, C, D): stesse identiche dimensioni IEC, voltaggio diverso (1,5 V vs 1,2 V). ${escapeHtml(
+    data.nimhLowerVoltageWarning
+  )}</p><p><strong>18650</strong>: ${escapeHtml(
+    data.formats.find((f) => f.id === '18650').extraWarning
+  )}</p></section></article>${footerCatalog()}</main><script type="application/json" id="battery-rules">${JSON.stringify(
+    data
+  )}</script><script src="/assets/battery-checker.js" defer></script>`;
+
+  return `<!DOCTYPE html><html lang="it"><head>${head}</head><body>${body}</body></html>`;
+}
+
 module.exports = {
   renderHomePage,
   renderCatalogPage,
@@ -395,4 +461,5 @@ module.exports = {
   renderPrivacyPage,
   renderAffiliazionePage,
   renderWallAnchorCalculatorPage,
+  renderBatteryCheckerPage,
 };

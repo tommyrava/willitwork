@@ -10,6 +10,7 @@ const {
   renderPrivacyPage,
   renderAffiliazionePage,
   renderWallAnchorCalculatorPage,
+  renderBatteryCheckerPage,
 } = require('./lib/templates');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -61,6 +62,11 @@ function main() {
   const wallAnchorRules = readJson(path.join(DATA_DIR, 'wall-anchor-rules.json'));
   writePage(path.join('calcolatori', 'vite-tassello'), renderWallAnchorCalculatorPage(wallAnchorRules));
 
+  // 4c. Calculators — third module: battery format checker. Same pattern:
+  //     own data file, server-rendered reference table, JS enhancement.
+  const batteryFormats = readJson(path.join(DATA_DIR, 'battery-formats.json'));
+  writePage(path.join('calcolatori', 'batterie'), renderBatteryCheckerPage(batteryFormats));
+
   // 5. sitemap.xml — same 44 URLs, same order, same changefreq/priority as the
   //    original sitemap.xml already saved at willitwork.it/sitemap.xml
   const urls = [
@@ -73,8 +79,9 @@ function main() {
       changefreq: 'monthly',
       priority: '0.8',
     })),
-    // New page, not part of the original 44 — first "calculator" module.
+    // New pages, not part of the original 44 — "calculator" modules.
     { loc: 'https://willitwork.it/calcolatori/vite-tassello', changefreq: 'monthly', priority: '0.7' },
+    { loc: 'https://willitwork.it/calcolatori/batterie', changefreq: 'monthly', priority: '0.7' },
   ];
   const sitemapBody = urls
     .map((u) => `<url>\n<loc>${u.loc}</loc>\n<changefreq>${u.changefreq}</changefreq>\n<priority>${u.priority}</priority>\n</url>`)
@@ -100,6 +107,10 @@ function main() {
   fs.copyFileSync(
     path.join(STATIC_SRC, 'wall-anchor-calculator.js'),
     path.join(OUT_DIR, 'assets', 'wall-anchor-calculator.js')
+  );
+  fs.copyFileSync(
+    path.join(STATIC_SRC, 'battery-checker.js'),
+    path.join(OUT_DIR, 'assets', 'battery-checker.js')
   );
   fs.copyFileSync(LOGO_SRC, path.join(OUT_DIR, 'will-it-work-logo.png'));
 
