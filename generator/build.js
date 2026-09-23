@@ -11,6 +11,7 @@ const {
   renderAffiliazionePage,
   renderWallAnchorCalculatorPage,
   renderBatteryCheckerPage,
+  renderUsbPdCalculatorPage,
 } = require('./lib/templates');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -67,6 +68,12 @@ function main() {
   const batteryFormats = readJson(path.join(DATA_DIR, 'battery-formats.json'));
   writePage(path.join('calcolatori', 'batterie'), renderBatteryCheckerPage(batteryFormats));
 
+  // 4d. Calculators — fourth module: USB-C / Power Delivery estimator.
+  //     Unlike the other two, output is explicitly framed as a theoretical
+  //     estimate (not a yes/no verdict) — see data file comment for why.
+  const usbPdRules = readJson(path.join(DATA_DIR, 'usb-pd-rules.json'));
+  writePage(path.join('calcolatori', 'usb-c-power-delivery'), renderUsbPdCalculatorPage(usbPdRules));
+
   // 5. sitemap.xml — same 44 URLs, same order, same changefreq/priority as the
   //    original sitemap.xml already saved at willitwork.it/sitemap.xml
   const urls = [
@@ -82,6 +89,7 @@ function main() {
     // New pages, not part of the original 44 — "calculator" modules.
     { loc: 'https://willitwork.it/calcolatori/vite-tassello', changefreq: 'monthly', priority: '0.7' },
     { loc: 'https://willitwork.it/calcolatori/batterie', changefreq: 'monthly', priority: '0.7' },
+    { loc: 'https://willitwork.it/calcolatori/usb-c-power-delivery', changefreq: 'monthly', priority: '0.7' },
   ];
   const sitemapBody = urls
     .map((u) => `<url>\n<loc>${u.loc}</loc>\n<changefreq>${u.changefreq}</changefreq>\n<priority>${u.priority}</priority>\n</url>`)
@@ -111,6 +119,10 @@ function main() {
   fs.copyFileSync(
     path.join(STATIC_SRC, 'battery-checker.js'),
     path.join(OUT_DIR, 'assets', 'battery-checker.js')
+  );
+  fs.copyFileSync(
+    path.join(STATIC_SRC, 'usb-pd-calculator.js'),
+    path.join(OUT_DIR, 'assets', 'usb-pd-calculator.js')
   );
   fs.copyFileSync(LOGO_SRC, path.join(OUT_DIR, 'will-it-work-logo.png'));
 

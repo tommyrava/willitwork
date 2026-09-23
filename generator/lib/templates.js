@@ -67,7 +67,7 @@ function renderHead(opts) {
 // ---------------------------------------------------------------------
 
 function headerHome() {
-  return `<header class="nav-wrap"><nav class="nav" aria-label="Navigazione principale"><a class="brand" href="/#top" aria-label="Will It Work, home"><span class="brand-mark"><img src="/will-it-work-logo.png" alt=""/></span><span>Will It Work?</span></a><div class="nav-links"><a href="/#come-funziona">Come funziona</a><a href="/compatibilita">Tutte le verifiche</a><a href="/#categorie">Categorie</a><a href="/calcolatori/vite-tassello">Calcolatore tasselli</a><a href="/calcolatori/batterie">Verificatore batterie</a></div><a class="nav-cta" href="/#checker">Prova ora</a></nav></header>`;
+  return `<header class="nav-wrap"><nav class="nav" aria-label="Navigazione principale"><a class="brand" href="/#top" aria-label="Will It Work, home"><span class="brand-mark"><img src="/will-it-work-logo.png" alt=""/></span><span>Will It Work?</span></a><div class="nav-links"><a href="/#come-funziona">Come funziona</a><a href="/compatibilita">Tutte le verifiche</a><a href="/#categorie">Categorie</a><a href="/calcolatori/vite-tassello">Calcolatore tasselli</a><a href="/calcolatori/batterie">Verificatore batterie</a><a href="/calcolatori/usb-c-power-delivery">Calcolatore USB-C</a></div><a class="nav-cta" href="/#checker">Prova ora</a></nav></header>`;
 }
 
 function headerGuideNav(linkHref, linkText) {
@@ -454,6 +454,54 @@ function renderBatteryCheckerPage(data) {
   return `<!DOCTYPE html><html lang="it"><head>${head}</head><body>${body}</body></html>`;
 }
 
+// ---------------------------------------------------------------------
+// USB-C / Power Delivery calculator (/calcolatori/usb-c-power-delivery)
+// ---------------------------------------------------------------------
+
+function renderUsbPdCableTableRow(c) {
+  return `<tr><td>${escapeHtml(c.label)}</td><td>${c.maxWatts} W</td><td>${c.maxVoltage} V</td><td>${c.maxAmps} A</td></tr>`;
+}
+
+function renderUsbPdCalculatorPage(data) {
+  const head = renderHead({
+    title: 'Quanti watt arrivano davvero? Calcolatore USB-C Power Delivery — Will It Work?',
+    description: 'Stima teorica della potenza di ricarica USB-C in base a cavo, alimentatore e dispositivo, con le fonti tecniche ufficiali USB-IF.',
+    ogTitle: 'Quanti watt arrivano davvero? Calcolatore USB-C Power Delivery',
+    ogDescription: 'Stima teorica della potenza di ricarica USB-C in base a cavo, alimentatore e dispositivo.',
+    ogType: 'article',
+    twitterTitle: 'Quanti watt arrivano davvero? Calcolatore USB-C Power Delivery',
+    twitterDescription: 'Stima teorica della potenza di ricarica USB-C in base a cavo, alimentatore e dispositivo.',
+    iconHref: '/will-it-work-logo.png',
+    canonical: 'https://willitwork.it/calcolatori/usb-c-power-delivery',
+    includeWebsiteLdJson: false,
+  });
+
+  const cableOptions = data.cableOptions
+    .map((c) => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.label)}</option>`)
+    .join('');
+  const deviceOptions = data.devicePresets
+    .map((d) => `<option value="${escapeHtml(d.id)}">${escapeHtml(d.label)}${d.watts != null ? ` (${d.watts} W)` : ''}</option>`)
+    .join('');
+  const cableTableRows = data.cableOptions.map(renderUsbPdCableTableRow).join('');
+
+  const body = `<main class="guide-page">${headerGuideNav(
+    '/#checker',
+    'Verifica un prodotto'
+  )}<article class="guide-article"><nav aria-label="Percorso"><a href="/">Home</a><span>›</span><span>Calcolatori</span></nav><div class="guide-kicker">CALCOLATORE</div><h1>Quanti watt arrivano davvero?</h1><p class="guide-lead">Cavo, alimentatore e dispositivo: la potenza reale è sempre il valore più basso dei tre. Stima teorica secondo lo standard USB Power Delivery.</p><div class="checker-shell" id="usb-pd-calc"><form id="usb-pd-form"><div class="checker-title"><span class="live-dot"></span><div><strong>Calcola la potenza di ricarica</strong><small>Stima teorica secondo lo standard USB-IF</small></div></div><label for="cable-select">Cosa c'è scritto sul cavo (wattaggio massimo)?</label><div class="input-wrap"><span class="input-icon">⌁</span><select id="cable-select">${cableOptions}</select></div><div class="connector"><span>+</span></div><label for="charger-watts">Wattaggio massimo dichiarato dall'alimentatore</label><div class="input-wrap"><span class="input-icon">↗</span><input id="charger-watts" type="number" min="0" step="1" placeholder="Es. 65"/></div><div class="connector"><span>+</span></div><label for="device-select">Wattaggio richiesto dal dispositivo</label><div class="input-wrap"><span class="input-icon">⌁</span><select id="device-select">${deviceOptions}</select></div><div class="input-wrap" id="device-custom-wrap" hidden><input id="device-watts-custom" type="number" min="0" step="1" placeholder="Es. 45"/></div></form><div class="tool-disclaimer">⚠ ${escapeHtml(
+    data.disclaimer
+  )}</div><div id="tool-result" class="checker-result" hidden aria-live="polite"></div></div><section class="guide-copy"><h2>Tabella dei profili di potenza standard</h2><table class="anchor-table"><thead><tr><th>Wattaggio dichiarato sul cavo</th><th>Potenza massima</th><th>Tensione massima</th><th>Corrente massima</th></tr></thead><tbody>${cableTableRows}</tbody></table><h2>Se non sai cosa c'è scritto sul cavo</h2><p>${escapeHtml(
+    data.fallbackExplanation
+  )}</p><h2>Attenzione alla sicurezza sopra i 60W</h2><p>${escapeHtml(
+    data.safetyNote
+  )}</p><h2>La velocità reale può differire</h2><p>${escapeHtml(
+    data.expectationsNote
+  )}</p><p class="guide-source">Fonti: ${renderSourceLinks(data.sources)}</p></section></article>${footerCatalog()}</main><script type="application/json" id="usb-pd-rules">${JSON.stringify(
+    data
+  )}</script><script src="/assets/usb-pd-calculator.js" defer></script>`;
+
+  return `<!DOCTYPE html><html lang="it"><head>${head}</head><body>${body}</body></html>`;
+}
+
 module.exports = {
   renderHomePage,
   renderCatalogPage,
@@ -462,4 +510,5 @@ module.exports = {
   renderAffiliazionePage,
   renderWallAnchorCalculatorPage,
   renderBatteryCheckerPage,
+  renderUsbPdCalculatorPage,
 };

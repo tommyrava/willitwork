@@ -1,0 +1,37 @@
+{
+  "_comment": "Calcolatore USB-C / Power Delivery. Modulo 'a regole' separato dagli altri dataset. A differenza di tasselli/batterie, qui il risultato è una STIMA TEORICA, non un verdetto affidabile al 100%: la negoziazione USB-PD reale dipende dalla conformità effettiva di cavo/alimentatore (non verificabile da specifiche dichiarate) e dall'esistenza di protocolli di ricarica rapida proprietari che non seguono lo standard USB-IF. Vedi 'safetyNote' e 'expectationsNote'. Il termine tecnico 'e-marker' non va mai usato nell'interfaccia utente, solo qui nei dati/commenti.",
+  "sources": [
+    { "label": "USB-IF — USB Charger (USB Power Delivery)", "url": "https://www.usb.org/usb-charger-pd" },
+    { "label": "USB-IF — USB Power Delivery, document library", "url": "https://www.usb.org/document-library/usb-power-delivery" },
+    { "label": "Apple — Fast charge your iPhone", "url": "https://support.apple.com/en-us/102574" },
+    { "label": "Apple — Fast charge your iPad", "url": "https://support.apple.com/en-us/125066" },
+    { "label": "Samsung — Super Fast Charging su Galaxy S24", "url": "https://www.samsung.com/uk/support/mobile-devices/how-to-use-super-fast-charging-on-galaxy-s24-ultra-s24-plus-and-s24/" }
+  ],
+  "cableOptions": [
+    {
+      "id": "unknown",
+      "label": "Non lo so / non è indicato",
+      "maxWatts": 60,
+      "maxVoltage": 20,
+      "maxAmps": 3,
+      "isFallback": true
+    },
+    { "id": "60w", "label": "60W o inferiore", "maxWatts": 60, "maxVoltage": 20, "maxAmps": 3 },
+    { "id": "100w", "label": "100W", "maxWatts": 100, "maxVoltage": 20, "maxAmps": 5 },
+    { "id": "140w", "label": "140W", "maxWatts": 140, "maxVoltage": 28, "maxAmps": 5 },
+    { "id": "240w", "label": "240W", "maxWatts": 240, "maxVoltage": 48, "maxAmps": 5 }
+  ],
+  "voltageTiers": [5, 9, 15, 20, 28, 36, 48],
+  "devicePresets": [
+    { "id": "iphone-15", "label": "iPhone 15 o precedente", "watts": 18, "source": { "label": "Apple — Fast charge your iPhone", "url": "https://support.apple.com/en-us/102574" } },
+    { "id": "iphone-17", "label": "iPhone 17 / 17 Pro", "watts": 40, "source": { "label": "Apple — Fast charge your iPhone", "url": "https://support.apple.com/en-us/102574" } },
+    { "id": "ipad-pro", "label": "iPad Pro", "watts": 60, "source": { "label": "Apple — Fast charge your iPad", "url": "https://support.apple.com/en-us/125066" } },
+    { "id": "galaxy-s24", "label": "Samsung Galaxy S24", "watts": 25, "source": { "label": "Samsung — Super Fast Charging", "url": "https://www.samsung.com/uk/support/mobile-devices/how-to-use-super-fast-charging-on-galaxy-s24-ultra-s24-plus-and-s24/" } },
+    { "id": "switch", "label": "Nintendo Switch (in mano)", "watts": 18, "source": { "label": "Specifiche adattatore ufficiale Nintendo (39W max, uso tipico portatile ~18W)", "url": "https://www.nintendo.com/eu/media/downloads/support_1/nintendoswitch/NSwitch_ImportantInformation_UKV.pdf" } },
+    { "id": "custom", "label": "Altro / inserisci manualmente", "watts": null }
+  ],
+  "fallbackExplanation": "Sopra i cavi USB-C oltre 3A/60W è previsto un chip di riconoscimento che dichiara elettronicamente la potenza massima supportata. Se non sai cosa c'è scritto sul tuo cavo, il sistema si ferma per sicurezza al valore minimo garantito dallo standard: 3A a 20V, cioè 60W. Potrebbe supportare di più, ma non c'è modo di saperlo senza controllare l'etichetta o la confezione.",
+  "safetyNote": "Sopra i 60W, un cavo economico o non certificato con il chip di riconoscimento difettoso o assente può dichiarare una potenza che non è davvero in grado di gestire in sicurezza. Esistono casi documentati di cavi USB-C economici con specifiche dichiarate false che hanno causato surriscaldamento e danneggiato i dispositivi collegati. Per potenze superiori a 60W, preferisci sempre cavi certificati USB-IF di marca riconosciuta.",
+  "expectationsNote": "Questo calcolatore segue solo lo standard USB Power Delivery ufficiale. Se il tuo dispositivo usa una ricarica rapida proprietaria (Qualcomm Quick Charge, OPPO/OnePlus VOOC/Warp/SuperVOOC) o richiede il supporto PPS di Samsung, il risultato qui sopra potrebbe non riflettere la velocità di ricarica reale: per la massima velocità in questi casi serve un alimentatore (e a volte anche un cavo) dello stesso produttore del dispositivo, o con supporto PPS esplicito.",
+  "disclaimer": "Il risultato è una stima teorica basata sui valori massimi dichiarati, non una misura reale: presuppone che cavo e alimentatore siano davvero conformi a quanto dichiarato. Verifica sempre le specifiche del produttore del tuo cavo e del tuo alimentatore specifico."
+}
