@@ -4,6 +4,54 @@
   var deviceInput, productInput, checkButton, resultBox, form;
   var index = null;
 
+  // Category router: when a query doesn't match anything in the 40-entry
+  // compatibility dataset, check whether it's instead about one of the
+  // rule-based calculators. Single-word keywords are matched as exact
+  // tokens (via tokenize(), same tokenizer used for the dataset match, so
+  // short ones like "aa"/"aaa" can't match as substrings of something
+  // else); multi-word phrases are matched on whitespace/hyphen-normalized
+  // text. This never touches dataset matching itself, which always runs
+  // first and unchanged.
+  var CATEGORIES = [
+    {
+      id: 'tasselli',
+      label: 'tasselli e fissaggi a muro',
+      shortLabel: 'vite-tassello',
+      url: '/calcolatori/vite-tassello/',
+      words: [
+        'vite', 'viti', 'tassello', 'tasselli', 'muro', 'parete', 'mattone',
+        'calcestruzzo', 'cemento', 'cartongesso', 'foro', 'forare', 'trapano',
+        'fischer', 'würth', 'avvitare', 'espansione', 'farfalla', 'molly',
+        'fissare', 'appendere', 'mensola', 'pensile', 'ancoraggio',
+      ],
+      phrases: [],
+    },
+    {
+      id: 'batterie',
+      label: 'formati di batterie',
+      shortLabel: 'batterie',
+      url: '/calcolatori/batterie/',
+      words: [
+        'batteria', 'batterie', 'pila', 'pile', 'ricaricabile', 'alcalina',
+        'nimh', 'litio', 'stilo', 'ministilo', 'torcia', 'aa', 'aaa', '9v',
+        'cr2032', 'cr2025', 'cr2016', 'cr123a', '18650', 'orologio',
+        'telecomando', 'bilancia',
+      ],
+      phrases: ['pila a bottone', 'batteria a bottone'],
+    },
+    {
+      id: 'usb-pd',
+      label: 'ricarica USB-C / Power Delivery',
+      shortLabel: 'USB-C',
+      url: '/calcolatori/usb-c-power-delivery/',
+      words: [
+        'cavo', 'cavi', 'caricatore', 'caricabatterie', 'alimentatore',
+        'watt', 'wattaggio', 'ampere', 'vooc', 'warp', 'pps',
+      ],
+      phrases: ['usb-c', 'usb c', 'tipo-c', 'power delivery', 'ricarica rapida', 'quick charge'],
+    },
+  ];
+
   function normalize(s) {
     return (s || '')
       .toString()
@@ -18,6 +66,28 @@
       .replace(/(\d)([a-z])/g, '$1 $2')
       .split(/[^a-z0-9]+/)
       .filter(Boolean);
+  }
+
+  function normalizeFlat(s) {
+    return (' ' + normalize(s).replace(/[^a-z0-9]+/g, ' ').trim() + ' ');
+  }
+
+  function detectCategory(deviceQuery, productQuery) {
+    var combined = deviceQuery + ' ' + productQuery;
+    var tokens = tokenize(combined);
+    var flatText = normalizeFlat(combined);
+
+    var matched = CATEGORIES.filter(function (cat) {
+      var wordHit = cat.words.some(function (w) {
+        return tokens.indexOf(w) !== -1;
+      });
+      if (wordHit) return true;
+      return cat.phrases.some(function (p) {
+        return flatText.indexOf(normalizeFlat(p)) !== -1;
+      });
+    });
+
+    return matched.length === 1 ? matched[0] : null;
   }
 
   function coverage(inputTokens, fieldTokens) {
@@ -52,6 +122,22 @@
   function showMessage(html) {
     resultBox.hidden = false;
     resultBox.innerHTML = html;
+  }
+
+  function renderCategorySuggestion(category) {
+    showMessage(
+      '<p class="checker-result-label">Sembra tu stia cercando qualcosa legato a ' +
+        escapeHtml(category.label) +
+        '</p>' +
+        '<p class="checker-result-empty">Non è tra le verifiche del catalogo, ma abbiamo un calcolatore dedicato per questo.</p>' +
+        '<div class="checker-result-list">' +
+        '<a class="checker-result-item" href="' +
+        category.url +
+        '"><span>CALCOLATORE DEDICATO</span><strong>Apri il calcolatore ' +
+        escapeHtml(category.shortLabel) +
+        ' →</strong></a>' +
+        '</div>'
+    );
   }
 
   function renderNoMatch(deviceQuery, productQuery, suggestions) {
@@ -101,6 +187,16 @@
     // product wording lines up with an existing guide -> go straight there.
     if (best && best.dScore >= 0.999 && best.pScore >= 0.6) {
       window.location.href = '/compatibilita/' + encodeURIComponent(best.entry.slug) + '/';
+      return;
+    }
+
+    // No confident dataset match: check if the query is instead about one
+    // of the rule-based calculators before falling back to "similar guide"
+    // suggestions. Ambiguous (0 or 2+ categories matched) -> same fallback
+    // as always, unchanged.
+    var category = detectCategory(deviceQuery, productQuery);
+    if (category) {
+      renderCategorySuggestion(category);
       return;
     }
 
